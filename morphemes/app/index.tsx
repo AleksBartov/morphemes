@@ -1,137 +1,104 @@
 import { AppColors } from "@/Colors";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import {
+  Canvas,
+  Fill,
+  LinearGradient,
+  Path,
+  Rect,
+  Shadow,
+  Skia,
+  SkPath,
+  vec,
+} from "@shopify/react-native-skia";
+import { useState } from "react";
+import { StatusBar, Text, useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
-
-const { width, height } = Dimensions.get("window");
-const SING_BOX_SIZE = width * 0.2;
-const MAX_BOTTOM = height / 2 - SING_BOX_SIZE;
-const START_POS = width / 2 - SING_BOX_SIZE / 2;
+import Animated from "react-native-reanimated";
 
 export default function Index() {
-  const translateX = useSharedValue(START_POS);
-  const translateY = useSharedValue(0);
-  const offsetX = useSharedValue(0);
-  const offsetY = useSharedValue(0);
-  const SING_BOX_WIDTH = useSharedValue(SING_BOX_SIZE);
-  const offsetPinch = useSharedValue(0);
-
+  const PATH_STROKE_WIDTH = 10;
+  const { width, height } = useWindowDimensions();
+  const [paths, setPaths] = useState<SkPath[]>([]);
   const pan = Gesture.Pan()
-    .onBegin(() => {
-      offsetX.value = translateX.value;
-      offsetY.value = translateY.value;
+    .runOnJS(true)
+    .onBegin((g) => {
+      const newPaths = [];
+      const path = Skia.Path.Make(); // Initiates a new svg path
+      path.moveTo(g.x, g.y); // Starting point
+      newPaths.push(path);
+      setPaths(newPaths);
     })
-    .onChange(({ translationX, translationY }) => {
-      translateX.value = translationX + offsetX.value;
-      if (translationY + offsetY.value > MAX_BOTTOM) {
-        translateY.value = MAX_BOTTOM;
-      } else {
-        translateY.value = translationY + offsetY.value;
-      }
+    .onUpdate((g) => {
+      const newPaths = [...paths];
+      const path = newPaths[newPaths.length - 1];
+      path.lineTo(g.x, g.y);
+      setPaths(newPaths);
     })
-    .onEnd(({ translationY }) => {
-      if (translationY + offsetY.value < MAX_BOTTOM / 2) {
-        translateY.value = withTiming(0);
-      } else {
-        translateY.value = withTiming(MAX_BOTTOM);
-      }
-      translateX.value = withTiming(START_POS);
+    .onEnd(() => {
+      // check to what of four forms it matches
+      let arrWithoutL = paths[0].toSVGString().split("L");
+      const stringWithoutM = arrWithoutL[0].substring(1);
+      arrWithoutL[0] = stringWithoutM;
+      const xesArr = [...arrWithoutL].map((p) => {
+        const xAndY = p.split(" ");
+        const result = +xAndY[0];
+        return result.toFixed(0);
+      });
+      const yesArr = [...arrWithoutL].map((p) => {
+        const xAndY = p.split(" ");
+        const result = +xAndY[1];
+        return result.toFixed(0);
+      });
+      console.log(xesArr, yesArr);
     });
-  const pinch = Gesture.Pinch()
-    .onBegin(() => {
-      offsetPinch.value = SING_BOX_WIDTH.value;
-    })
-    .onUpdate(({ scale }) => {
-      SING_BOX_WIDTH.value = offsetPinch.value * scale;
-    })
-    .onEnd(() => {});
-  const panAndPinch = Gesture.Race(pan, pinch);
-
-  const rStyle = useAnimatedStyle(() => {
-    return {
-      width: SING_BOX_WIDTH.value,
-      transform: [
-        { translateX: translateX.value },
-        { translateY: translateY.value },
-      ],
-    };
-  }, []);
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: AppColors.platinum,
-      }}
-    >
-      <GestureDetector gesture={panAndPinch}>
-        <Animated.View style={[styles.sing, rStyle]}>
-          <Text style={styles.sing_text}>^</Text>
+    <View style={{ flex: 1 }}>
+      <StatusBar barStyle={"dark-content"} />
+      <GestureDetector gesture={pan}>
+        <Animated.View style={{ flex: 1 }}>
+          <Canvas style={{ flex: 1 }}>
+            <Rect x={0} y={0} width={width} height={height}>
+              <LinearGradient
+                start={vec(0, 0)}
+                end={vec(width, height)}
+                colors={[AppColors.blue, AppColors.lightBlue]}
+              />
+            </Rect>
+
+            {paths.map((p) => (
+              <Path
+                key={p.toSVGString()}
+                path={p}
+                strokeWidth={PATH_STROKE_WIDTH}
+                style="stroke"
+                strokeJoin={"round"}
+                strokeCap={"round"}
+                antiAlias
+                color={"rgba(255,255,255,0.7)"}
+              >
+                <Shadow dx={2} dy={2} blur={6} color="rgba(255,255,255,0.5)" />
+                <Shadow
+                  dx={-2}
+                  dy={-2}
+                  blur={6}
+                  color="rgba(255,255,255,0.5)"
+                />
+              </Path>
+            ))}
+          </Canvas>
+          <Text
+            style={{
+              color: AppColors.platinum,
+              fontSize: 140,
+              position: "absolute",
+              top: 50,
+              left: 100,
+            }}
+          >
+            носорог
+          </Text>
         </Animated.View>
       </GestureDetector>
-      <View style={styles.box_for_letter}></View>
-      <View style={styles.box_for_letter_1}></View>
-      <View style={styles.box_for_letter_2}></View>
-      <View style={styles.box_for_letter_3}></View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  sing: {
-    position: "absolute",
-    height: SING_BOX_SIZE * 2,
-    borderColor: AppColors.charcoal,
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingVertical: 24,
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
-  box_for_letter: {
-    position: "absolute",
-    top: MAX_BOTTOM + SING_BOX_SIZE,
-    right: START_POS - SING_BOX_SIZE * 2,
-    width: SING_BOX_SIZE,
-    height: SING_BOX_SIZE,
-    borderColor: AppColors.lightBlue,
-    borderWidth: 1,
-    borderRadius: 5,
-  },
-  box_for_letter_1: {
-    position: "absolute",
-    top: MAX_BOTTOM + SING_BOX_SIZE,
-    right: START_POS - SING_BOX_SIZE,
-    width: SING_BOX_SIZE,
-    height: SING_BOX_SIZE,
-    borderColor: AppColors.lightBlue,
-    borderWidth: 1,
-    borderRadius: 5,
-  },
-  box_for_letter_2: {
-    position: "absolute",
-    top: MAX_BOTTOM + SING_BOX_SIZE,
-    right: START_POS,
-    width: SING_BOX_SIZE,
-    height: SING_BOX_SIZE,
-    borderColor: AppColors.lightBlue,
-    borderWidth: 1,
-    borderRadius: 5,
-  },
-  box_for_letter_3: {
-    position: "absolute",
-    top: MAX_BOTTOM + SING_BOX_SIZE,
-    right: START_POS + SING_BOX_SIZE,
-    width: SING_BOX_SIZE,
-    height: SING_BOX_SIZE,
-    borderColor: AppColors.lightBlue,
-    borderWidth: 1,
-    borderRadius: 5,
-  },
-  sing_text: {
-    fontSize: 65,
-  },
-});
