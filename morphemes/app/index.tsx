@@ -43,12 +43,12 @@ export default function Index() {
       const xesArr = [...arrWithoutL].map((p) => {
         const xAndY = p.split(" ");
         const result = +xAndY[0];
-        return result.toFixed(0);
+        return +result.toFixed(0);
       });
       const yesArr = [...arrWithoutL].map((p) => {
         const xAndY = p.split(" ");
         const result = +xAndY[1];
-        return result.toFixed(0);
+        return +result.toFixed(0);
       });
 
       // console.log(xesArr, yesArr);
