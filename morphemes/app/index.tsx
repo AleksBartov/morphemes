@@ -1,4 +1,5 @@
 import { AppColors } from "@/Colors";
+import { shapeDetector } from "@/helpers";
 import {
   Canvas,
   Fill,
@@ -16,7 +17,7 @@ import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 
 export default function Index() {
-  const PATH_STROKE_WIDTH = 10;
+  const PATH_STROKE_WIDTH = 14;
   const { width, height } = useWindowDimensions();
   const [paths, setPaths] = useState<SkPath[]>([]);
   const pan = Gesture.Pan()
@@ -49,7 +50,9 @@ export default function Index() {
         const result = +xAndY[1];
         return result.toFixed(0);
       });
-      console.log(xesArr, yesArr);
+
+      // console.log(xesArr, yesArr);
+      shapeDetector(xesArr, yesArr);
     });
   return (
     <View style={{ flex: 1 }}>
