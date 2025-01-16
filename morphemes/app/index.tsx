@@ -1,9 +1,8 @@
 import { AppColors } from "@/Colors";
 import LetterBox from "@/components/LetterBox";
-import { shapeDetector } from "@/helpers";
+import UserShapes, { ShapeProps } from "@/components/UserShapes";
 import {
   Canvas,
-  Fill,
   LinearGradient,
   Path,
   Rect,
@@ -13,7 +12,7 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { useState } from "react";
-import { StatusBar, useWindowDimensions, View } from "react-native";
+import { Alert, StatusBar, useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 
@@ -23,6 +22,42 @@ export default function Index() {
   const LETTERS_PEDDING = 100;
   const LETTER_BOX_SIZE = (width - LETTERS_PEDDING * 2) * 0.12;
   const [paths, setPaths] = useState<SkPath[]>([]);
+
+  const [shapes, setShapes] = useState<ShapeProps[]>([
+    {
+      startPoint: LETTERS_PEDDING,
+      path: "M8 204.5H221.5C229.784 204.5 236.5 211.216 236.5 219.5V239.5",
+    },
+  ]);
+
+  const shapeDetector = (xes: number[], yes: number[]) => {
+    const xDiffer = Math.abs(xes[0] - xes[xes.length - 1]);
+    const yDiffer = Math.abs(yes[0] - yes[yes.length - 1]);
+    const procentage = Math.abs(Math.max(...yes) - Math.min(...yes)) / xDiffer;
+
+    if (xDiffer > 40 || yDiffer > 40) {
+      if (yDiffer > 40) {
+        setShapes((prev) => {
+          return [
+            ...prev,
+            {
+              startPoint: xes[0],
+              path: "M8 204.5H221.5C229.784 204.5 236.5 211.216 236.5 219.5V239.5",
+            },
+          ];
+        });
+      } else {
+        if (procentage > 0.4) {
+          Alert.alert("looks like suff");
+        } else {
+          Alert.alert("looks like root");
+        }
+      }
+    } else {
+      Alert.alert("looks like ending");
+    }
+  };
+
   const pan = Gesture.Pan()
     .runOnJS(true)
     .onBegin((g) => {
@@ -40,7 +75,7 @@ export default function Index() {
     })
     .onEnd(() => {
       // check to what of four forms it matches
-      let arrWithoutL = paths[0].toSVGString().split("L");
+      let arrWithoutL = paths[0]?.toSVGString().split("L");
       const stringWithoutM = arrWithoutL[0].substring(1);
       arrWithoutL[0] = stringWithoutM;
       const xesArr = [...arrWithoutL].map((p) => {
@@ -91,6 +126,13 @@ export default function Index() {
                 />
               </Path>
             ))}
+            {shapes && (
+              <UserShapes
+                shapes={shapes}
+                strokeWidth={PATH_STROKE_WIDTH}
+                size={LETTER_BOX_SIZE}
+              />
+            )}
           </Canvas>
           <View
             style={{
@@ -102,7 +144,7 @@ export default function Index() {
               flexDirection: "row",
             }}
           >
-            {["м", "а", "л", "ь", "ч", "и", "к"].map((l, i) => {
+            {["м", "а", "л", "ь", "ч", "и"].map((l, i) => {
               return (
                 <LetterBox
                   letter={l}
