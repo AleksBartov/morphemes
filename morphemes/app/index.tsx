@@ -1,4 +1,5 @@
 import { AppColors } from "@/Colors";
+import LetterBox from "@/components/LetterBox";
 import { shapeDetector } from "@/helpers";
 import {
   Canvas,
@@ -12,13 +13,15 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { useState } from "react";
-import { StatusBar, Text, useWindowDimensions, View } from "react-native";
+import { StatusBar, useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 
 export default function Index() {
   const PATH_STROKE_WIDTH = 14;
   const { width, height } = useWindowDimensions();
+  const LETTERS_PEDDING = 100;
+  const LETTER_BOX_SIZE = (width - LETTERS_PEDDING * 2) * 0.12;
   const [paths, setPaths] = useState<SkPath[]>([]);
   const pan = Gesture.Pan()
     .runOnJS(true)
@@ -32,7 +35,7 @@ export default function Index() {
     .onUpdate((g) => {
       const newPaths = [...paths];
       const path = newPaths[newPaths.length - 1];
-      path.lineTo(g.x, g.y);
+      path?.lineTo(g.x, g.y);
       setPaths(newPaths);
     })
     .onEnd(() => {
@@ -89,17 +92,27 @@ export default function Index() {
               </Path>
             ))}
           </Canvas>
-          <Text
+          <View
             style={{
-              color: AppColors.platinum,
-              fontSize: 140,
               position: "absolute",
-              top: 50,
-              left: 100,
+              width: width,
+              height: height,
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "row",
             }}
           >
-            носорог
-          </Text>
+            {["м", "а", "л", "ь", "ч", "и", "к"].map((l, i) => {
+              return (
+                <LetterBox
+                  letter={l}
+                  key={`${l}_${i}`}
+                  index={i}
+                  size={LETTER_BOX_SIZE}
+                />
+              );
+            })}
+          </View>
         </Animated.View>
       </GestureDetector>
     </View>
