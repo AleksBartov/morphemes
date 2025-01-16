@@ -21,6 +21,7 @@ const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
       {shapes.map((sh, i) => {
         return (
           <FitBox
+            key={i}
             src={rect(0, 0, 250, 250)}
             dst={rect(sh.startPoint, height / 2 - size - size / 4, size, size)}
           >

@@ -37,6 +37,7 @@ export default function Index() {
 
     if (xDiffer > 40 || yDiffer > 40) {
       if (yDiffer > 40) {
+        setPaths([]);
         setShapes((prev) => {
           return [
             ...prev,
