@@ -26,12 +26,18 @@ export default function Index() {
   const [shapes, setShapes] = useState<ShapeProps[]>([
     {
       startPoint: 0,
-      endPoint: 0,
+      absStartPoint: 0,
+      shapeWidth: 0,
       pathName: "test",
     },
   ]);
 
-  const shapeDetector = (xes: number[], yes: number[]) => {
+  const shapeDetector = (
+    xes: number[],
+    yes: number[],
+    shapeWidth: number,
+    startPoint: number
+  ) => {
     const xDiffer = Math.abs(xes[0] - xes[xes.length - 1]);
     const yDiffer = Math.abs(yes[0] - yes[yes.length - 1]);
     const procentage = Math.abs(Math.max(...yes) - Math.min(...yes)) / xDiffer;
@@ -43,8 +49,9 @@ export default function Index() {
           return [
             ...prev,
             {
-              startPoint: xes[0],
-              endPoint: xes[0],
+              startPoint: startPoint,
+              absStartPoint: xes[0],
+              shapeWidth: shapeWidth,
               pathName: "preroot",
             },
           ];
@@ -58,8 +65,9 @@ export default function Index() {
             return [
               ...prev,
               {
-                startPoint: xes[0],
-                endPoint: xes[0],
+                startPoint: startPoint,
+                absStartPoint: xes[0],
+                shapeWidth: shapeWidth,
                 pathName: "root",
               },
             ];
@@ -89,6 +97,7 @@ export default function Index() {
     .onEnd(() => {
       // check to what of four forms it matches
       let arrWithoutL = paths[0]?.toSVGString().split("L");
+      // console.log(paths[0]?.getBounds().x);
       const stringWithoutM = arrWithoutL[0].substring(1);
       arrWithoutL[0] = stringWithoutM;
       const xesArr = [...arrWithoutL].map((p) => {
@@ -103,7 +112,12 @@ export default function Index() {
       });
 
       // console.log(xesArr, yesArr);
-      shapeDetector(xesArr, yesArr);
+      shapeDetector(
+        xesArr,
+        yesArr,
+        paths[0]?.getBounds().width,
+        paths[0]?.getBounds().x
+      );
     });
   return (
     <View style={{ flex: 1 }}>
