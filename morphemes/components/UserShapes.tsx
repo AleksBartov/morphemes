@@ -22,9 +22,16 @@ const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
       {shapes.map((sh, i) => {
         let actualPath = "";
         if (sh.pathName === "root") {
-          actualPath = `M${sh.startPoint} 9h${size}v78`;
+          actualPath = `M ${sh.startPoint} ${height / 2 - size / 2}
+           C ${sh.startPoint + size / 8} ${height / 2 - size / 2 - 40} ${
+            sh.startPoint + size - size / 8
+          } ${height / 2 - size / 2 - 40} ${sh.startPoint + size} ${
+            height / 2 - size / 2
+          }`;
         } else if (sh.pathName === "preroot") {
-          actualPath = `M${sh.startPoint} 9h${size}v78`;
+          actualPath = `M${sh.startPoint} ${height / 2 - size / 2}h${size}v${
+            size / 4
+          }`;
         }
         return (
           <Path
@@ -34,7 +41,7 @@ const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
             strokeJoin="round"
             style="stroke"
             color={AppColors.platinum}
-            strokeWidth={strokeWidth * 2}
+            strokeWidth={strokeWidth}
           />
         );
       })}
