@@ -1,11 +1,12 @@
 import { StyleSheet, useWindowDimensions } from "react-native";
 import React from "react";
-import { FitBox, Group, Path, rect } from "@shopify/react-native-skia";
+import { Group, Path } from "@shopify/react-native-skia";
 import { AppColors } from "@/Colors";
 
 export type ShapeProps = {
   startPoint: number;
-  path: string;
+  endPoint: number;
+  pathName: string;
 };
 
 type UserShapesProps = {
@@ -19,21 +20,22 @@ const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
   return (
     <Group>
       {shapes.map((sh, i) => {
+        let actualPath = "";
+        if (sh.pathName === "root") {
+          actualPath = `M${sh.startPoint} 9h${size}v78`;
+        } else if (sh.pathName === "preroot") {
+          actualPath = `M${sh.startPoint} 9h${size}v78`;
+        }
         return (
-          <FitBox
+          <Path
             key={i}
-            src={rect(0, 0, 250, 250)}
-            dst={rect(sh.startPoint, height / 2 - size - size / 4, size, size)}
-          >
-            <Path
-              path={sh.path}
-              strokeCap="round"
-              strokeJoin="round"
-              style="stroke"
-              color={AppColors.platinum}
-              strokeWidth={strokeWidth}
-            />
-          </FitBox>
+            path={actualPath}
+            strokeCap="round"
+            strokeJoin="round"
+            style="stroke"
+            color={AppColors.platinum}
+            strokeWidth={strokeWidth * 2}
+          />
         );
       })}
     </Group>

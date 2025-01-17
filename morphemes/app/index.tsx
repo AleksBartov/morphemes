@@ -25,8 +25,9 @@ export default function Index() {
 
   const [shapes, setShapes] = useState<ShapeProps[]>([
     {
-      startPoint: LETTERS_PEDDING,
-      path: "M8 204.5H221.5C229.784 204.5 236.5 211.216 236.5 219.5V239.5",
+      startPoint: 0,
+      endPoint: 0,
+      pathName: "test",
     },
   ]);
 
@@ -43,7 +44,8 @@ export default function Index() {
             ...prev,
             {
               startPoint: xes[0],
-              path: "M8 204.5H221.5C229.784 204.5 236.5 211.216 236.5 219.5V239.5",
+              endPoint: xes[0],
+              pathName: "preroot",
             },
           ];
         });
@@ -51,7 +53,17 @@ export default function Index() {
         if (procentage > 0.4) {
           Alert.alert("looks like suff");
         } else {
-          Alert.alert("looks like root");
+          setPaths([]);
+          setShapes((prev) => {
+            return [
+              ...prev,
+              {
+                startPoint: xes[0],
+                endPoint: xes[0],
+                pathName: "root",
+              },
+            ];
+          });
         }
       }
     } else {
@@ -145,7 +157,7 @@ export default function Index() {
               flexDirection: "row",
             }}
           >
-            {["м", "а", "л", "ь", "ч", "и"].map((l, i) => {
+            {["м", "а", "л", "ь", "ч", "и", "к"].map((l, i) => {
               return (
                 <LetterBox
                   letter={l}
