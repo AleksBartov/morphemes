@@ -11,6 +11,7 @@ export type ShapeProps = {
 };
 
 type UserShapesProps = {
+  wordsLength: number;
   shapes: ShapeProps[];
   strokeWidth: number;
   size: number;
@@ -18,29 +19,42 @@ type UserShapesProps = {
 
 const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
   const { width, height } = useWindowDimensions();
-  const word_length = 7;
-  const letter_points = [
-    width / 2 - (word_length / 2) * size,
-    width / 2 - (word_length / 2) * size + size,
-    width / 2 - (word_length / 2) * size + size * 2,
-  ];
-  const nearLetter = letter_points[1];
+
   return (
     <Group>
       {shapes.map((sh, i) => {
         // console.log(sh.absStartPoint);
-        let actualPath = "";
+        let actualPath = "",
+          pathColor = AppColors.charcoal;
+        const reminder = sh.shapeWidth % size;
+        const actualWidth =
+          reminder > size / 2
+            ? sh.shapeWidth + (size - reminder)
+            : sh.shapeWidth - reminder;
         if (sh.pathName === "root") {
+          pathColor = "red";
           actualPath = `M ${sh.startPoint} ${height / 2 - size / 2}
            C ${sh.startPoint + size / 3} ${height / 2 - size / 2 - 100} ${
-            sh.startPoint + sh.shapeWidth - size / 3
-          } ${height / 2 - size / 2 - 100} ${sh.startPoint + sh.shapeWidth} ${
+            sh.startPoint + actualWidth - size / 3
+          } ${height / 2 - size / 2 - 100} ${sh.startPoint + actualWidth} ${
             height / 2 - size / 2
           }`;
         } else if (sh.pathName === "preroot") {
-          actualPath = `M${sh.startPoint} ${height / 2 - size / 2}h${
-            sh.shapeWidth
-          }v${size / 4}`;
+          pathColor = "green";
+          actualPath = `M${sh.startPoint} ${
+            height / 2 - size / 2
+          }h${actualWidth}v${size / 4}`;
+        } else if (sh.pathName === "suff") {
+          pathColor = "blue";
+          actualPath = `M ${sh.startPoint} ${height / 2 - size / 2} L ${
+            sh.startPoint + actualWidth / 2
+          } ${height / 2 - size / 2 - 40} 
+          L ${sh.startPoint + actualWidth} ${height / 2 - size / 2}`;
+        } else {
+          pathColor = "orange";
+          actualPath = `M ${sh.startPoint} ${height / 2 - size / 2} H ${
+            sh.startPoint + actualWidth
+          } V${height / 2 - size / 2 + size * 1.5} H ${sh.startPoint} Z `;
         }
         return (
           <Path
@@ -49,7 +63,7 @@ const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
             strokeCap="round"
             strokeJoin="round"
             style="stroke"
-            color={AppColors.platinum}
+            color={pathColor}
             strokeWidth={strokeWidth}
           />
         );

@@ -1,7 +1,13 @@
 import { StyleSheet, Text, useWindowDimensions } from "react-native";
 import React from "react";
 import { AppColors } from "@/Colors";
-import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
+import Animated, {
+  FadeIn,
+  FadeInDown,
+  FadeInLeft,
+  FlipInYRight,
+  SlideInUp,
+} from "react-native-reanimated";
 
 type LetterBoxProps = {
   letter: string;
@@ -13,7 +19,7 @@ const LetterBox = ({ letter, index, size }: LetterBoxProps) => {
   const { width, height } = useWindowDimensions();
   return (
     <Animated.View
-      entering={FadeInDown.delay(index * 100)}
+      entering={FlipInYRight.delay(index * 80)}
       style={{
         width: size,
         height: size,

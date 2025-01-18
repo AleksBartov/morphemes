@@ -16,8 +16,13 @@ import { Alert, StatusBar, useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 
+const WORD_FOR_TEST = {
+  word: "приставка",
+  length: 9,
+};
+
 export default function Index() {
-  const PATH_STROKE_WIDTH = 14;
+  const PATH_STROKE_WIDTH = 10;
   const { width, height } = useWindowDimensions();
   const LETTERS_PEDDING = 100;
   const LETTER_BOX_SIZE = (width - LETTERS_PEDDING * 2) * 0.12;
@@ -25,7 +30,7 @@ export default function Index() {
 
   const [shapes, setShapes] = useState<ShapeProps[]>([
     {
-      startPoint: 0,
+      startPoint: -140,
       absStartPoint: 0,
       shapeWidth: 0,
       pathName: "test",
@@ -58,7 +63,18 @@ export default function Index() {
         });
       } else {
         if (procentage > 0.4) {
-          Alert.alert("looks like suff");
+          setPaths([]);
+          setShapes((prev) => {
+            return [
+              ...prev,
+              {
+                startPoint: startPoint,
+                absStartPoint: xes[0],
+                shapeWidth: shapeWidth,
+                pathName: "suff",
+              },
+            ];
+          });
         } else {
           setPaths([]);
           setShapes((prev) => {
@@ -75,7 +91,18 @@ export default function Index() {
         }
       }
     } else {
-      Alert.alert("looks like ending");
+      setPaths([]);
+      setShapes((prev) => {
+        return [
+          ...prev,
+          {
+            startPoint: startPoint,
+            absStartPoint: xes[0],
+            shapeWidth: shapeWidth,
+            pathName: "ending",
+          },
+        ];
+      });
     }
   };
 
@@ -155,6 +182,7 @@ export default function Index() {
             ))}
             {shapes && (
               <UserShapes
+                wordsLength={WORD_FOR_TEST.length}
                 shapes={shapes}
                 strokeWidth={PATH_STROKE_WIDTH}
                 size={LETTER_BOX_SIZE}
@@ -171,7 +199,7 @@ export default function Index() {
               flexDirection: "row",
             }}
           >
-            {["м", "а", "л", "ь", "ч", "и", "к"].map((l, i) => {
+            {WORD_FOR_TEST.word.split("").map((l, i) => {
               return (
                 <LetterBox
                   letter={l}
