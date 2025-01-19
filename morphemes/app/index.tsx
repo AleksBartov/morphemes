@@ -13,12 +13,18 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { useState } from "react";
-import { Alert, StatusBar, useWindowDimensions, View } from "react-native";
+import {
+  StatusBar,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const WORD_FOR_TEST = {
-  word: "ПОМИДОР",
+  word: "КРАПИВА",
   length: 7,
 };
 
@@ -28,14 +34,7 @@ export default function Index() {
 
   const [paths, setPaths] = useState<SkPath[]>([]);
 
-  const [shapes, setShapes] = useState<ShapeProps[]>([
-    {
-      startPoint: -130,
-      absStartPoint: 0,
-      shapeWidth: 0,
-      pathName: "test",
-    },
-  ]);
+  const [shapes, setShapes] = useState<ShapeProps[]>([]);
 
   const shapeDetector = (
     xes: number[],
@@ -49,7 +48,6 @@ export default function Index() {
 
     if (xDiffer > 40 || yDiffer > 40) {
       if (yDiffer > 40) {
-        setPaths([]);
         setShapes((prev) => {
           return [
             ...prev,
@@ -63,7 +61,6 @@ export default function Index() {
         });
       } else {
         if (procentage > 0.4) {
-          setPaths([]);
           setShapes((prev) => {
             return [
               ...prev,
@@ -76,7 +73,6 @@ export default function Index() {
             ];
           });
         } else {
-          setPaths([]);
           setShapes((prev) => {
             return [
               ...prev,
@@ -91,7 +87,6 @@ export default function Index() {
         }
       }
     } else {
-      setPaths([]);
       setShapes((prev) => {
         return [
           ...prev,
@@ -122,6 +117,7 @@ export default function Index() {
       setPaths(newPaths);
     })
     .onEnd(() => {
+      setPaths([]);
       // check to what of four forms it matches
       let arrWithoutL = paths[0]?.toSVGString().split("L");
       // console.log(paths[0]?.getBounds().x);

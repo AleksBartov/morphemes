@@ -1,6 +1,6 @@
 import { StyleSheet, useWindowDimensions } from "react-native";
 import React from "react";
-import { Group, Path } from "@shopify/react-native-skia";
+import { Circle, Group, Path } from "@shopify/react-native-skia";
 import { AppColors } from "@/Colors";
 import { getLetterCoords } from "@/helpers";
 
@@ -26,6 +26,7 @@ const UserShapes = ({
 }: UserShapesProps) => {
   const { width, height } = useWindowDimensions();
   const letter_x_coords = getLetterCoords(wordsLength);
+  // console.log(letter_x_coords);
 
   return (
     <Group>
@@ -38,33 +39,113 @@ const UserShapes = ({
           reminder > size / 2
             ? sh.shapeWidth + (size - reminder)
             : sh.shapeWidth - reminder;
-        if (sh.pathName === "root") {
-          pathColor = "red";
-          actualPath = `M ${sh.startPoint} ${height / 2 - size / 2}
-           C ${sh.startPoint + size / 3} ${height / 2 - size / 2 - 100} ${
-            sh.startPoint + actualWidth - size / 3
-          } ${height / 2 - size / 2 - 100} ${sh.startPoint + actualWidth} ${
-            height / 2 - size / 2
-          }`;
-        } else if (sh.pathName === "preroot") {
-          pathColor = "green";
-          actualPath = `M${sh.startPoint} ${
-            height / 2 - size / 2
-          }h${actualWidth}v${size / 4}`;
-        } else if (sh.pathName === "suff") {
-          pathColor = "blue";
-          actualPath = `M ${sh.startPoint} ${height / 2 - size / 2} L ${
-            sh.startPoint + actualWidth / 2
-          } ${height / 2 - size / 2 - 40} 
-          L ${sh.startPoint + actualWidth} ${height / 2 - size / 2}`;
+
+        const exactStartArray: number[] = [];
+        letter_x_coords.forEach((coord) => {
+          exactStartArray.push(Math.floor(sh.startPoint - coord));
+        });
+        let correctStartPoint = 2000;
+        exactStartArray.forEach((c) => {
+          if (Math.abs(c) < correctStartPoint) correctStartPoint = c;
+        });
+        // console.log(exactStartArray, correctStartPoint);
+        // console.log(correctStartPoint);
+
+        if (correctStartPoint >= 0) {
+          if (sh.pathName === "root") {
+            pathColor = "red";
+            actualPath = `M ${sh.startPoint - correctStartPoint + size / 2} ${
+              height / 2 - size / 2
+            }
+   C ${sh.startPoint - correctStartPoint + size / 2 + size / 3} ${
+              height / 2 - size / 2 - 100
+            } ${
+              sh.startPoint +
+              correctStartPoint -
+              size / 2 +
+              actualWidth -
+              size / 3
+            } ${height / 2 - size / 2 - 100} ${
+              sh.startPoint - correctStartPoint + size / 2 + actualWidth
+            } ${height / 2 - size / 2}`;
+          } else if (sh.pathName === "preroot") {
+            pathColor = "green";
+            actualPath = `M${sh.startPoint - correctStartPoint + size / 2} ${
+              height / 2 - size / 2
+            }h${actualWidth}v${size / 4}`;
+          } else if (sh.pathName === "suff") {
+            pathColor = "blue";
+            actualPath = `M ${sh.startPoint - correctStartPoint + size / 2} ${
+              height / 2 - size / 2
+            } L ${
+              sh.startPoint - correctStartPoint + size / 2 + actualWidth / 2
+            } ${height / 2 - size / 2 - 40} 
+  L ${sh.startPoint - correctStartPoint + size / 2 + actualWidth} ${
+              height / 2 - size / 2
+            }`;
+          } else {
+            pathColor = "orange";
+            actualPath = `M ${sh.startPoint - correctStartPoint + size / 2} ${
+              height / 2 - size / 2
+            } H ${
+              sh.startPoint - correctStartPoint + size / 2 + actualWidth
+            } V${height / 2 - size / 2 + size + strokeWidth} H ${
+              sh.startPoint - correctStartPoint + size / 2
+            } Z `;
+          }
         } else {
-          pathColor = "orange";
-          actualPath = `M ${sh.startPoint} ${height / 2 - size / 2} H ${
-            sh.startPoint + actualWidth
-          } V${height / 2 - size / 2 + size + strokeWidth} H ${
-            sh.startPoint
-          } Z `;
+          if (sh.pathName === "root") {
+            pathColor = "red";
+            actualPath = `M ${
+              sh.startPoint + Math.abs(correctStartPoint) - size / 2
+            } ${height / 2 - size / 2}
+   C ${sh.startPoint + Math.abs(correctStartPoint) - size / 2 + size / 3} ${
+              height / 2 - size / 2 - 100
+            } ${
+              sh.startPoint +
+              Math.abs(correctStartPoint) -
+              size / 2 +
+              actualWidth -
+              size / 3
+            } ${height / 2 - size / 2 - 100} ${
+              sh.startPoint +
+              Math.abs(correctStartPoint) -
+              size / 2 +
+              actualWidth
+            } ${height / 2 - size / 2}`;
+          } else if (sh.pathName === "preroot") {
+            pathColor = "green";
+            actualPath = `M${
+              sh.startPoint + Math.abs(correctStartPoint) - size / 2
+            } ${height / 2 - size / 2}h${actualWidth}v${size / 4}`;
+          } else if (sh.pathName === "suff") {
+            pathColor = "blue";
+            actualPath = `M ${
+              sh.startPoint + Math.abs(correctStartPoint) - size / 2
+            } ${height / 2 - size / 2} L ${
+              sh.startPoint +
+              Math.abs(correctStartPoint) -
+              size / 2 +
+              actualWidth / 2
+            } ${height / 2 - size / 2 - 40} 
+  L ${sh.startPoint + Math.abs(correctStartPoint) - size / 2 + actualWidth} ${
+              height / 2 - size / 2
+            }`;
+          } else {
+            pathColor = "orange";
+            actualPath = `M ${
+              sh.startPoint + Math.abs(correctStartPoint) - size / 2
+            } ${height / 2 - size / 2} H ${
+              sh.startPoint +
+              Math.abs(correctStartPoint) -
+              size / 2 +
+              actualWidth
+            } V${height / 2 - size / 2 + size + strokeWidth} H ${
+              sh.startPoint + Math.abs(correctStartPoint) - size / 2
+            } Z `;
+          }
         }
+
         return (
           <Path
             key={i}
