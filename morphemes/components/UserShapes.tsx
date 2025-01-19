@@ -2,6 +2,7 @@ import { StyleSheet, useWindowDimensions } from "react-native";
 import React from "react";
 import { Group, Path } from "@shopify/react-native-skia";
 import { AppColors } from "@/Colors";
+import { getLetterCoords } from "@/helpers";
 
 export type ShapeProps = {
   startPoint: number;
@@ -17,8 +18,14 @@ type UserShapesProps = {
   size: number;
 };
 
-const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
+const UserShapes = ({
+  wordsLength,
+  shapes,
+  strokeWidth,
+  size,
+}: UserShapesProps) => {
   const { width, height } = useWindowDimensions();
+  const letter_x_coords = getLetterCoords(wordsLength);
 
   return (
     <Group>
@@ -54,7 +61,9 @@ const UserShapes = ({ shapes, strokeWidth, size }: UserShapesProps) => {
           pathColor = "orange";
           actualPath = `M ${sh.startPoint} ${height / 2 - size / 2} H ${
             sh.startPoint + actualWidth
-          } V${height / 2 - size / 2 + size * 1.5} H ${sh.startPoint} Z `;
+          } V${height / 2 - size / 2 + size + strokeWidth} H ${
+            sh.startPoint
+          } Z `;
         }
         return (
           <Path

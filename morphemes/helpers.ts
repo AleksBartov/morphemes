@@ -1,4 +1,23 @@
-export const svgShapesPath = {
-  preroot_1: "M8 204.5H221.5C229.784 204.5 236.5 211.216 236.5 219.5V239.5",
-  preroot_11: "M9 9H2958C2966.28 9 2973 15.7157 2973 24V78",
+import { Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+export const LETTERS_PEDDING = 100;
+export const LETTER_BOX_SIZE = (width - LETTERS_PEDDING * 2) * 0.12;
+
+export const getLetterCoords = (length: number) => {
+  const coords: number[] = [];
+  if (length % 2) {
+    const firstCenter =
+      width / 2 - (length / 2) * LETTER_BOX_SIZE + LETTER_BOX_SIZE / 2;
+    for (let index = 0; index < length; index++) {
+      coords.push(firstCenter + index * LETTER_BOX_SIZE);
+    }
+  } else {
+    const firstCenter =
+      width / 2 - (length / 2) * LETTER_BOX_SIZE + LETTER_BOX_SIZE;
+    for (let index = 0; index < length; index++) {
+      coords.push(firstCenter + index * LETTER_BOX_SIZE);
+    }
+  }
+  return coords;
 };

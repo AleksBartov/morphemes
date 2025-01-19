@@ -1,6 +1,7 @@
 import { AppColors } from "@/Colors";
 import LetterBox from "@/components/LetterBox";
 import UserShapes, { ShapeProps } from "@/components/UserShapes";
+import { LETTER_BOX_SIZE } from "@/helpers";
 import {
   Canvas,
   LinearGradient,
@@ -17,20 +18,19 @@ import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 
 const WORD_FOR_TEST = {
-  word: "приставка",
-  length: 9,
+  word: "ПОМИДОР",
+  length: 7,
 };
 
 export default function Index() {
   const PATH_STROKE_WIDTH = 10;
   const { width, height } = useWindowDimensions();
-  const LETTERS_PEDDING = 100;
-  const LETTER_BOX_SIZE = (width - LETTERS_PEDDING * 2) * 0.12;
+
   const [paths, setPaths] = useState<SkPath[]>([]);
 
   const [shapes, setShapes] = useState<ShapeProps[]>([
     {
-      startPoint: -140,
+      startPoint: -130,
       absStartPoint: 0,
       shapeWidth: 0,
       pathName: "test",
