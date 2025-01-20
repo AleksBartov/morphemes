@@ -15,6 +15,7 @@ import {
 import { useState } from "react";
 import {
   StatusBar,
+  Text,
   TouchableOpacity,
   useWindowDimensions,
   View,
@@ -22,10 +23,11 @@ import {
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import CloseIcon from "@/components/CloseIcon";
 
 const WORD_FOR_TEST = {
-  word: "КРАПИВА",
-  length: 7,
+  word: "ПЕРЕМЕНКА",
+  length: 9,
 };
 
 export default function Index() {
@@ -35,7 +37,7 @@ export default function Index() {
   const [paths, setPaths] = useState<SkPath[]>([]);
 
   const [shapes, setShapes] = useState<ShapeProps[]>([]);
-
+  // console.log(shapes);
   const shapeDetector = (
     xes: number[],
     yes: number[],
@@ -144,6 +146,20 @@ export default function Index() {
     });
   return (
     <View style={{ flex: 1 }}>
+      {shapes.map((s, i) => {
+        return (
+          <CloseIcon
+            key={i}
+            shape={s}
+            index={i}
+            deleteShape={(i: number) => {
+              // console.log(shapes);
+              shapes.splice(i, 1);
+              setShapes([...shapes]);
+            }}
+          />
+        );
+      })}
       <StatusBar barStyle={"dark-content"} />
       <GestureDetector gesture={pan}>
         <Animated.View style={{ flex: 1 }}>

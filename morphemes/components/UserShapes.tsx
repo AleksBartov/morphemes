@@ -1,6 +1,6 @@
 import { StyleSheet, useWindowDimensions } from "react-native";
 import React from "react";
-import { Circle, Group, Path } from "@shopify/react-native-skia";
+import { Group, Path, Shadow } from "@shopify/react-native-skia";
 import { AppColors } from "@/Colors";
 import { getLetterCoords } from "@/helpers";
 
@@ -24,14 +24,12 @@ const UserShapes = ({
   strokeWidth,
   size,
 }: UserShapesProps) => {
-  const { width, height } = useWindowDimensions();
+  const { height } = useWindowDimensions();
   const letter_x_coords = getLetterCoords(wordsLength);
-  // console.log(letter_x_coords);
 
   return (
     <Group>
       {shapes.map((sh, i) => {
-        // console.log(sh.absStartPoint);
         let actualPath = "",
           pathColor = AppColors.charcoal;
         const reminder = sh.shapeWidth % size;
@@ -48,8 +46,6 @@ const UserShapes = ({
         exactStartArray.forEach((c) => {
           if (Math.abs(c) < correctStartPoint) correctStartPoint = c;
         });
-        // console.log(exactStartArray, correctStartPoint);
-        // console.log(correctStartPoint);
 
         if (correctStartPoint >= 0) {
           if (sh.pathName === "root") {
@@ -155,7 +151,9 @@ const UserShapes = ({
             style="stroke"
             color={pathColor}
             strokeWidth={strokeWidth}
-          />
+          >
+            <Shadow dx={5} dy={0} blur={3} color="rgba(0,0,0,0.5)" />
+          </Path>
         );
       })}
     </Group>
