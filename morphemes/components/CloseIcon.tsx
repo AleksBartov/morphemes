@@ -32,7 +32,7 @@ const CloseIcon = ({ shape, index, deleteShape }: CloseIconProps) => {
       style={{
         position: "absolute",
         left: shape.startPoint + shape.shapeWidth / 2,
-        top: height / 5,
+        top: height / 12,
         zIndex: 2000,
       }}
     >

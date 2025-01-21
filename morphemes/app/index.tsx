@@ -14,20 +14,19 @@ import {
 } from "@shopify/react-native-skia";
 import { useState } from "react";
 import {
+  Button,
   StatusBar,
-  Text,
   TouchableOpacity,
   useWindowDimensions,
   View,
 } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import CloseIcon from "@/components/CloseIcon";
 
 const WORD_FOR_TEST = {
-  word: "ПЕРЕМЕНКА",
-  length: 9,
+  word: "ПРИБАВОЧКУ",
+  length: 10,
 };
 
 export default function Index() {
@@ -180,7 +179,6 @@ export default function Index() {
                 style="stroke"
                 strokeJoin={"round"}
                 strokeCap={"round"}
-                antiAlias
                 color={"rgba(255,255,255,0.7)"}
               >
                 <Shadow dx={2} dy={2} blur={6} color="rgba(255,255,255,0.5)" />
@@ -224,6 +222,20 @@ export default function Index() {
           </View>
         </Animated.View>
       </GestureDetector>
+      {shapes.length !== 0 && (
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            width: 200,
+            height: 60,
+            justifyContent: "center",
+            alignItems: "center",
+            bottom: 20,
+          }}
+        >
+          <Button title="проверить" />
+        </TouchableOpacity>
+      )}
     </View>
   );
 }
