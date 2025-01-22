@@ -1,7 +1,7 @@
 import { AppColors } from "@/Colors";
 import LetterBox from "@/components/LetterBox";
 import UserShapes, { ShapeProps } from "@/components/UserShapes";
-import { LETTER_BOX_SIZE } from "@/helpers";
+import { checkAnswer, LETTER_BOX_SIZE } from "@/helpers";
 import {
   Canvas,
   LinearGradient,
@@ -14,7 +14,7 @@ import {
 } from "@shopify/react-native-skia";
 import { useState } from "react";
 import {
-  Button,
+  Text,
   StatusBar,
   TouchableOpacity,
   useWindowDimensions,
@@ -24,9 +24,27 @@ import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated from "react-native-reanimated";
 import CloseIcon from "@/components/CloseIcon";
 
-const WORD_FOR_TEST = {
-  word: "ПРИБАВОЧКУ",
-  length: 10,
+export type RightShape = {
+  name: string;
+  position: number;
+  shapeLength: number;
+};
+
+export type TestedWord = {
+  word: string;
+  rightAnswer: RightShape[];
+  length: number;
+};
+
+const WORD_FOR_TEST: TestedWord = {
+  word: "ПОБЕРЕЖЬЕ",
+  rightAnswer: [
+    { name: "preroot", position: 0, shapeLength: 2 },
+    { name: "root", position: 2, shapeLength: 4 },
+    { name: "suff", position: 6, shapeLength: 2 },
+    { name: "ending", position: 8, shapeLength: 1 },
+  ],
+  length: 9,
 };
 
 export default function Index() {
@@ -145,6 +163,7 @@ export default function Index() {
     });
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar barStyle={"dark-content"} />
       {shapes.map((s, i) => {
         return (
           <CloseIcon
@@ -159,7 +178,6 @@ export default function Index() {
           />
         );
       })}
-      <StatusBar barStyle={"dark-content"} />
       <GestureDetector gesture={pan}>
         <Animated.View style={{ flex: 1 }}>
           <Canvas style={{ flex: 1 }}>
@@ -224,6 +242,10 @@ export default function Index() {
       </GestureDetector>
       {shapes.length !== 0 && (
         <TouchableOpacity
+          onPress={() => {
+            const answer = checkAnswer([...shapes], WORD_FOR_TEST);
+            console.log(answer);
+          }}
           style={{
             position: "absolute",
             width: 200,
@@ -233,7 +255,7 @@ export default function Index() {
             bottom: 20,
           }}
         >
-          <Button title="проверить" />
+          <Text>ПРОВЕРИТЬ</Text>
         </TouchableOpacity>
       )}
     </View>
