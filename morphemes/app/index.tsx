@@ -37,14 +37,14 @@ export type TestedWord = {
 };
 
 const WORD_FOR_TEST: TestedWord = {
-  word: "ПОБЕРЕЖЬЕ",
+  word: "РАЗУМНЫЙ",
   rightAnswer: [
-    { name: "preroot", position: 0, shapeLength: 2 },
-    { name: "root", position: 2, shapeLength: 4 },
-    { name: "suff", position: 6, shapeLength: 2 },
-    { name: "ending", position: 8, shapeLength: 1 },
+    { name: "preroot", position: 0, shapeLength: 3 },
+    { name: "root", position: 3, shapeLength: 2 },
+    { name: "suff", position: 5, shapeLength: 1 },
+    { name: "ending", position: 6, shapeLength: 2 },
   ],
-  length: 9,
+  length: 8,
 };
 
 export default function Index() {
