@@ -4,25 +4,31 @@ import UserShapes, { ShapeProps } from "@/components/UserShapes";
 import { checkAnswer, LETTER_BOX_SIZE } from "@/helpers";
 import {
   Canvas,
+  Image,
   LinearGradient,
+  makeImageFromView,
   Path,
   Rect,
   Shadow,
   Skia,
+  SkImage,
   SkPath,
   vec,
 } from "@shopify/react-native-skia";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   Text,
   StatusBar,
   TouchableOpacity,
   useWindowDimensions,
+  StyleSheet,
   View,
+  PixelRatio,
 } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import Animated from "react-native-reanimated";
+import Animated, { useSharedValue, withTiming } from "react-native-reanimated";
 import CloseIcon from "@/components/CloseIcon";
+import LottieView from "lottie-react-native";
 
 export type RightShape = {
   name: string;
@@ -47,13 +53,29 @@ const WORD_FOR_TEST: TestedWord = {
   length: 8,
 };
 
+const pd = PixelRatio.get();
+
+const wait = async (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
 export default function Index() {
+  const ref = useRef<View>(null);
+
+  const [image, setImage] = useState<SkImage | null>(null);
+  const [checked, setChecked] = useState(false);
   const PATH_STROKE_WIDTH = 10;
   const { width, height } = useWindowDimensions();
+  const imageHeight = useSharedValue(height);
 
   const [paths, setPaths] = useState<SkPath[]>([]);
 
   const [shapes, setShapes] = useState<ShapeProps[]>([]);
+
+  const makeSnapshot = async () => {
+    // Take the snapshot of the view
+    const snapshot = await makeImageFromView(ref);
+    setImage(snapshot);
+  };
   // console.log(shapes);
   const shapeDetector = (
     xes: number[],
@@ -123,63 +145,70 @@ export default function Index() {
   const pan = Gesture.Pan()
     .runOnJS(true)
     .onBegin((g) => {
-      const newPaths = [];
-      const path = Skia.Path.Make(); // Initiates a new svg path
-      path.moveTo(g.x, g.y); // Starting point
-      newPaths.push(path);
-      setPaths(newPaths);
+      if (!checked) {
+        const newPaths = [];
+        const path = Skia.Path.Make(); // Initiates a new svg path
+        path.moveTo(g.x, g.y); // Starting point
+        newPaths.push(path);
+        setPaths(newPaths);
+      }
     })
     .onUpdate((g) => {
-      const newPaths = [...paths];
-      const path = newPaths[newPaths.length - 1];
-      path?.lineTo(g.x, g.y);
-      setPaths(newPaths);
+      if (!checked) {
+        const newPaths = [...paths];
+        const path = newPaths[newPaths.length - 1];
+        path?.lineTo(g.x, g.y);
+        setPaths(newPaths);
+      }
     })
     .onEnd(() => {
-      setPaths([]);
-      // check to what of four forms it matches
-      let arrWithoutL = paths[0]?.toSVGString().split("L");
-      // console.log(paths[0]?.getBounds().x);
-      const stringWithoutM = arrWithoutL[0].substring(1);
-      arrWithoutL[0] = stringWithoutM;
-      const xesArr = [...arrWithoutL].map((p) => {
-        const xAndY = p.split(" ");
-        const result = +xAndY[0];
-        return +result.toFixed(0);
-      });
-      const yesArr = [...arrWithoutL].map((p) => {
-        const xAndY = p.split(" ");
-        const result = +xAndY[1];
-        return +result.toFixed(0);
-      });
+      if (!checked) {
+        setPaths([]);
+        // check to what of four forms it matches
+        let arrWithoutL = paths[0]?.toSVGString().split("L");
+        // console.log(paths[0]?.getBounds().x);
+        const stringWithoutM = arrWithoutL[0].substring(1);
+        arrWithoutL[0] = stringWithoutM;
+        const xesArr = [...arrWithoutL].map((p) => {
+          const xAndY = p.split(" ");
+          const result = +xAndY[0];
+          return +result.toFixed(0);
+        });
+        const yesArr = [...arrWithoutL].map((p) => {
+          const xAndY = p.split(" ");
+          const result = +xAndY[1];
+          return +result.toFixed(0);
+        });
 
-      // console.log(xesArr, yesArr);
-      shapeDetector(
-        xesArr,
-        yesArr,
-        paths[0]?.getBounds().width,
-        paths[0]?.getBounds().x
-      );
+        // console.log(xesArr, yesArr);
+        shapeDetector(
+          xesArr,
+          yesArr,
+          paths[0]?.getBounds().width,
+          paths[0]?.getBounds().x
+        );
+      }
     });
   return (
     <View style={{ flex: 1 }}>
       <StatusBar barStyle={"dark-content"} />
-      {shapes.map((s, i) => {
-        return (
-          <CloseIcon
-            key={i}
-            shape={s}
-            index={i}
-            deleteShape={(i: number) => {
-              // console.log(shapes);
-              shapes.splice(i, 1);
-              setShapes([...shapes]);
-            }}
-          />
-        );
-      })}
+      {!checked &&
+        shapes.map((s, i) => {
+          return (
+            <CloseIcon
+              key={i}
+              shape={s}
+              index={i}
+              deleteShape={(i: number) => {
+                // console.log(shapes);
+                shapes.splice(i, 1);
+                setShapes([...shapes]);
+              }}
+            />
+          );
+        })}
       <GestureDetector gesture={pan}>
-        <Animated.View style={{ flex: 1 }}>
+        <Animated.View style={{ flex: 1 }} ref={ref}>
           <Canvas style={{ flex: 1 }}>
             <Rect x={0} y={0} width={width} height={height}>
               <LinearGradient
@@ -240,11 +269,18 @@ export default function Index() {
           </View>
         </Animated.View>
       </GestureDetector>
-      {shapes.length !== 0 && (
+      {!checked && shapes.length !== 0 && (
         <TouchableOpacity
           onPress={() => {
             const answer = checkAnswer([...shapes], WORD_FOR_TEST);
+            /*
+            makeSnapshot();
+            setTimeout(() => {
+              imageHeight.value = withTiming(height / 2);
+            }, 120);
+            */
             console.log(answer);
+            setChecked(true);
           }}
           style={{
             position: "absolute",
@@ -252,11 +288,28 @@ export default function Index() {
             height: 60,
             justifyContent: "center",
             alignItems: "center",
-            bottom: 20,
+            bottom: 30,
+            left: width / 2 - 100,
+            backgroundColor: AppColors.charcoal,
+            borderRadius: 6,
           }}
         >
-          <Text>ПРОВЕРИТЬ</Text>
+          <Text style={{ color: AppColors.platinum, fontSize: 26 }}>
+            ПРОВЕРИТЬ
+          </Text>
         </TouchableOpacity>
+      )}
+
+      {checked && (
+        <LottieView
+          autoPlay
+          style={{
+            width: 200,
+            height: 200,
+            backgroundColor: "#eee",
+          }}
+          source={require("../assets/images/rightAnswer.json")}
+        />
       )}
     </View>
   );
