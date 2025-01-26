@@ -293,7 +293,7 @@ export default function Index() {
               Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
               setCheckedWrong(true);
             }
-            console.log(answer);
+            // console.log(answer);
           }}
           style={{
             position: "absolute",
@@ -321,7 +321,7 @@ export default function Index() {
             setCheckedRight(true);
             setChecked(false);
           }}
-          duration={1600}
+          duration={1000}
           style={{
             width: LETTER_BOX_SIZE * 3,
             height: LETTER_BOX_SIZE * 3,
@@ -337,7 +337,7 @@ export default function Index() {
         <LottieView
           autoPlay
           onAnimationFinish={() => setCheckedWrong(false)}
-          duration={1200}
+          duration={1000}
           loop={false}
           style={{
             width: LETTER_BOX_SIZE * 3,
