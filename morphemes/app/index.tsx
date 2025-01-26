@@ -4,7 +4,6 @@ import UserShapes, { ShapeProps } from "@/components/UserShapes";
 import { checkAnswer, LETTER_BOX_SIZE } from "@/helpers";
 import {
   Canvas,
-  Image,
   LinearGradient,
   makeImageFromView,
   Path,
@@ -21,14 +20,14 @@ import {
   StatusBar,
   TouchableOpacity,
   useWindowDimensions,
-  StyleSheet,
   View,
   PixelRatio,
 } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import Animated, { useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, { useSharedValue } from "react-native-reanimated";
 import CloseIcon from "@/components/CloseIcon";
 import LottieView from "lottie-react-native";
+import * as Haptics from "expo-haptics";
 
 export type RightShape = {
   name: string;
@@ -63,6 +62,9 @@ export default function Index() {
 
   const [image, setImage] = useState<SkImage | null>(null);
   const [checked, setChecked] = useState(false);
+  const [checkedWrong, setCheckedWrong] = useState(false);
+  const [checkedRight, setCheckedRight] = useState(false);
+
   const PATH_STROKE_WIDTH = 10;
   const { width, height } = useWindowDimensions();
   const imageHeight = useSharedValue(height);
@@ -145,16 +147,17 @@ export default function Index() {
   const pan = Gesture.Pan()
     .runOnJS(true)
     .onBegin((g) => {
-      if (!checked) {
+      if (!checkedRight) {
         const newPaths = [];
         const path = Skia.Path.Make(); // Initiates a new svg path
         path.moveTo(g.x, g.y); // Starting point
         newPaths.push(path);
         setPaths(newPaths);
+        setCheckedWrong(false);
       }
     })
     .onUpdate((g) => {
-      if (!checked) {
+      if (!checkedRight) {
         const newPaths = [...paths];
         const path = newPaths[newPaths.length - 1];
         path?.lineTo(g.x, g.y);
@@ -162,7 +165,7 @@ export default function Index() {
       }
     })
     .onEnd(() => {
-      if (!checked) {
+      if (!checkedRight) {
         setPaths([]);
         // check to what of four forms it matches
         let arrWithoutL = paths[0]?.toSVGString().split("L");
@@ -192,7 +195,7 @@ export default function Index() {
   return (
     <View style={{ flex: 1 }}>
       <StatusBar barStyle={"dark-content"} />
-      {!checked &&
+      {!checkedRight &&
         shapes.map((s, i) => {
           return (
             <CloseIcon
@@ -269,7 +272,7 @@ export default function Index() {
           </View>
         </Animated.View>
       </GestureDetector>
-      {!checked && shapes.length !== 0 && (
+      {!checkedRight && shapes.length !== 0 && (
         <TouchableOpacity
           onPress={() => {
             const answer = checkAnswer([...shapes], WORD_FOR_TEST);
@@ -279,8 +282,18 @@ export default function Index() {
               imageHeight.value = withTiming(height / 2);
             }, 120);
             */
+
+            if (answer) {
+              Haptics.notificationAsync(
+                Haptics.NotificationFeedbackType.Success
+              );
+              setCheckedWrong(false);
+              setChecked(true);
+            } else {
+              Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+              setCheckedWrong(true);
+            }
             console.log(answer);
-            setChecked(true);
           }}
           style={{
             position: "absolute",
@@ -303,12 +316,38 @@ export default function Index() {
       {checked && (
         <LottieView
           autoPlay
+          loop={false}
+          onAnimationFinish={() => {
+            setCheckedRight(true);
+            setChecked(false);
+          }}
+          duration={1600}
           style={{
-            width: 200,
-            height: 200,
-            backgroundColor: "#eee",
+            width: LETTER_BOX_SIZE * 3,
+            height: LETTER_BOX_SIZE * 3,
+            backgroundColor: "transparent",
+            position: "absolute",
+            left: width / 2 - (LETTER_BOX_SIZE * 3) / 2,
+            top: height / 2 - (LETTER_BOX_SIZE * 3) / 2,
           }}
           source={require("../assets/images/rightAnswer.json")}
+        />
+      )}
+      {checkedWrong && (
+        <LottieView
+          autoPlay
+          onAnimationFinish={() => setCheckedWrong(false)}
+          duration={1200}
+          loop={false}
+          style={{
+            width: LETTER_BOX_SIZE * 3,
+            height: LETTER_BOX_SIZE * 3,
+            backgroundColor: "transparent",
+            position: "absolute",
+            left: width / 2 - (LETTER_BOX_SIZE * 3) / 2,
+            top: height / 2 - (LETTER_BOX_SIZE * 3) / 2,
+          }}
+          source={require("../assets/images/wrongAnswer.json")}
         />
       )}
     </View>
