@@ -14,7 +14,7 @@ export default function Index() {
             key={i}
             index={i}
             testedWord={w}
-            fadeOut={(index: number) => {
+            fadeOut={(i: number) => {
               words.splice(i, 1);
               setWords([...words]);
             }}

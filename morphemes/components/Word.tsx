@@ -24,6 +24,7 @@ import {
 } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
+  FadeOut,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
@@ -188,7 +189,10 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
     };
   });
   return (
-    <Animated.View style={[StyleSheet.absoluteFillObject, rStyle]}>
+    <Animated.View
+      style={[StyleSheet.absoluteFillObject, rStyle]}
+      exiting={FadeOut}
+    >
       {!checkedRight &&
         shapes.map((s, i) => {
           return (

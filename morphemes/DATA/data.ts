@@ -6,7 +6,15 @@ export interface TestedWord {
   length: number;
 }
 
-export const WORDS_FOR_TEST: TestedWord[] = [
+const shuffle = (array: TestedWord[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const allWords: TestedWord[] = [
   {
     word: "АВГУСТ",
     rightAnswer: [{ name: "root", position: 0, shapeLength: 6 }],
@@ -109,6 +117,45 @@ export const WORDS_FOR_TEST: TestedWord[] = [
     ],
     length: 7,
   },
+  {
+    word: "БАБА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "ending", position: 3, shapeLength: 1 },
+    ],
+    length: 4,
+  },
+  {
+    word: "БАБУЛЯ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "БАБУШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БАГАЖ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "БАГАЖНИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 3 },
+    ],
+    length: 8,
+  },
 ];
 
 /*
@@ -123,3 +170,5 @@ export const WORDS_FOR_TEST: TestedWord[] = [
     length: 6,
   },
 */
+
+export const WORDS_FOR_TEST = shuffle(allWords);
