@@ -59,7 +59,7 @@ export const checkAnswer = (shapes: ShapeProps[], testedWord: TestedWord) => {
     shapeWidthes.push(+Math.abs(differ).toFixed(0));
   });
 
-  if ([...new Set(shapeWidthes)].length !== 1) {
+  if ([...new Set(shapeWidthes)].length !== 1 || [...new Set(shapeWidthes)][0]!==0) {
     return false;
   }
 
