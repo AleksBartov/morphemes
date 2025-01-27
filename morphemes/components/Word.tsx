@@ -40,9 +40,11 @@ export type RightShape = {
 
 type WordProps = {
   testedWord: TestedWord;
+  index: number;
+  fadeOut: (index: number) => void;
 };
 
-const Word = ({ testedWord }: WordProps) => {
+const Word = ({ testedWord, index, fadeOut }: WordProps) => {
   const ref = useRef<View>(null);
 
   const translateX = useSharedValue(0);
@@ -314,6 +316,7 @@ const Word = ({ testedWord }: WordProps) => {
             setCheckedWrong(false);
             setCheckedRight(false);
             setChecked(false);
+            fadeOut(index);
           }}
           duration={1000}
           style={{

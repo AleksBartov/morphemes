@@ -1,6 +1,6 @@
 import { Dimensions } from "react-native";
 import { ShapeProps } from "./components/UserShapes";
-import { RightShape, TestedWord } from "./app";
+import { TestedWord } from "./DATA/data";
 
 const { width, height } = Dimensions.get("window");
 export const LETTERS_PEDDING = 100;
@@ -27,6 +27,7 @@ export const getLetterCoords = (length: number) => {
 export const checkAnswer = (shapes: ShapeProps[], testedWord: TestedWord) => {
   const { rightAnswer } = testedWord;
   const userShapesNames = shapes.map((s) => s.pathName);
+  // console.log(userShapesNames);
   const userIndexes: number[] = [];
   const shapeWidthes: number[] = [];
   const startPoints: number[] = [];
@@ -59,7 +60,10 @@ export const checkAnswer = (shapes: ShapeProps[], testedWord: TestedWord) => {
     shapeWidthes.push(+Math.abs(differ).toFixed(0));
   });
 
-  if ([...new Set(shapeWidthes)].length !== 1 || [...new Set(shapeWidthes)][0]!==0) {
+  if (
+    [...new Set(shapeWidthes)].length !== 1 ||
+    [...new Set(shapeWidthes)][0] !== 0
+  ) {
     return false;
   }
 
