@@ -31,14 +31,18 @@ import Animated, {
 import CloseIcon from "@/components/CloseIcon";
 import LottieView from "lottie-react-native";
 import * as Haptics from "expo-haptics";
-import { TestedWord } from "@/app";
+import { TestedWord } from "@/DATA/data";
 export type RightShape = {
   name: string;
   position: number;
   shapeLength: number;
 };
 
-const Word = ({ testedWord }) => {
+type WordProps = {
+  testedWord: TestedWord;
+};
+
+const Word = ({ testedWord }: WordProps) => {
   const ref = useRef<View>(null);
 
   const translateX = useSharedValue(0);
@@ -307,8 +311,8 @@ const Word = ({ testedWord }) => {
           loop={false}
           onAnimationFinish={() => {
             translateX.value = withTiming(-width);
-
-            setCheckedRight(true);
+            setCheckedWrong(false);
+            setCheckedRight(false);
             setChecked(false);
           }}
           duration={1000}
@@ -326,7 +330,10 @@ const Word = ({ testedWord }) => {
       {checkedWrong && (
         <LottieView
           autoPlay
-          onAnimationFinish={() => setCheckedWrong(false)}
+          onAnimationFinish={() => {
+            setChecked(false);
+            setCheckedWrong(false);
+          }}
           duration={1000}
           loop={false}
           style={{
