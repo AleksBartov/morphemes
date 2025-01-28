@@ -156,6 +156,180 @@ const allWords: TestedWord[] = [
     ],
     length: 8,
   },
+  {
+    word: "БАЛ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 3 }],
+    length: 3,
+  },
+  {
+    word: "БАЛЕТ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "БАЛЕТНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 1 },
+      { name: "ending", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "БАНАН",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "БАНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "БАНОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 1 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БАРАН",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "БАРАШЕК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БАТОН",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "БАТОНЧИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 3 },
+    ],
+    length: 8,
+  },
+  {
+    word: "БАШМАК",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 6 }],
+    length: 6,
+  },
+  {
+    word: "БАШМАЧНИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 },
+      { name: "suff", position: 6, shapeLength: 3 },
+    ],
+    length: 9,
+  },
+  {
+    word: "БАШМАЧОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 },
+      { name: "suff", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "БЕГАЮ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 1 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "БЕГЕМОТИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 7 },
+      { name: "suff", position: 7, shapeLength: 2 },
+    ],
+    length: 9,
+  },
+  {
+    word: "БЕГЛЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 1 },
+      { name: "ending", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "БЕГОМ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "БЕГОТНЯ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БЕГУН",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "БЕГУНЬЯ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БЕДА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "ending", position: 3, shapeLength: 1 },
+    ],
+    length: 4,
+  },
+  {
+    word: "БЕДНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 1 },
+      { name: "ending", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "БЕЗДЕЛЬНИК",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 3 },
+      { name: "root", position: 3, shapeLength: 4 },
+      { name: "suff", position: 7, shapeLength: 3 },
+    ],
+    length: 10,
+  },
 ];
 
 /*

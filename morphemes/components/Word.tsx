@@ -145,6 +145,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
         newPaths.push(path);
         setPaths(newPaths);
         setCheckedWrong(false);
+        setChecked(false);
       }
     })
     .onUpdate((g) => {
@@ -288,6 +289,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
               );
               setCheckedWrong(false);
               setChecked(true);
+              setShapes([]);
             } else {
               Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
               setCheckedWrong(true);
@@ -320,10 +322,11 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
           loop={false}
           onAnimationFinish={() => {
             // translateX.value = withTiming(-width);
+            fadeOut(index);
             setCheckedWrong(false);
             setCheckedRight(false);
             setChecked(false);
-            fadeOut(index);
+            setShapes([]);
           }}
           duration={1000}
           style={{
@@ -341,8 +344,9 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
         <LottieView
           autoPlay
           onAnimationFinish={() => {
-            setChecked(false);
-            setCheckedWrong(false);
+            setCheckedWrong((e) => !e);
+            // setChecked(false);
+            setShapes([]);
           }}
           duration={1000}
           loop={false}
