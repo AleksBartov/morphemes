@@ -31,7 +31,7 @@ const LetterBox = ({ letter, index, size }: LetterBoxProps) => {
     >
       <Animated.Text
         style={{
-          color: AppColors.platinum,
+          color: AppColors.ds_bc,
           fontSize: width * 0.07,
         }}
       >

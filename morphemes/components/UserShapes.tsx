@@ -49,7 +49,7 @@ const UserShapes = ({
 
         if (correctStartPoint >= 0) {
           if (sh.pathName === "root") {
-            pathColor = "red";
+            pathColor = AppColors.ds_classic_root;
             actualPath = `M ${sh.startPoint - correctStartPoint + size / 2} ${
               height / 2 - size / 2
             }
@@ -65,12 +65,12 @@ const UserShapes = ({
               sh.startPoint - correctStartPoint + size / 2 + actualWidth
             } ${height / 2 - size / 2}`;
           } else if (sh.pathName === "preroot") {
-            pathColor = "green";
+            pathColor = AppColors.ds_classic_preroot;
             actualPath = `M${sh.startPoint - correctStartPoint + size / 2} ${
               height / 2 - size / 2
             }h${actualWidth}v${size / 4}`;
           } else if (sh.pathName === "suff") {
-            pathColor = "blue";
+            pathColor = AppColors.ds_classic_suff;
             actualPath = `M ${sh.startPoint - correctStartPoint + size / 2} ${
               height / 2 - size / 2
             } L ${
@@ -80,7 +80,7 @@ const UserShapes = ({
               height / 2 - size / 2
             }`;
           } else {
-            pathColor = "orange";
+            pathColor = AppColors.ds_classic_ending;
             actualPath = `M ${sh.startPoint - correctStartPoint + size / 2} ${
               height / 2 - size / 2
             } H ${
@@ -91,7 +91,7 @@ const UserShapes = ({
           }
         } else {
           if (sh.pathName === "root") {
-            pathColor = "red";
+            pathColor = AppColors.ds_classic_root;
             actualPath = `M ${
               sh.startPoint + Math.abs(correctStartPoint) - size / 2
             } ${height / 2 - size / 2}
@@ -110,12 +110,12 @@ const UserShapes = ({
               actualWidth
             } ${height / 2 - size / 2}`;
           } else if (sh.pathName === "preroot") {
-            pathColor = "green";
+            pathColor = AppColors.ds_classic_preroot;
             actualPath = `M${
               sh.startPoint + Math.abs(correctStartPoint) - size / 2
             } ${height / 2 - size / 2}h${actualWidth}v${size / 4}`;
           } else if (sh.pathName === "suff") {
-            pathColor = "blue";
+            pathColor = AppColors.ds_classic_suff;
             actualPath = `M ${
               sh.startPoint + Math.abs(correctStartPoint) - size / 2
             } ${height / 2 - size / 2} L ${
@@ -128,7 +128,7 @@ const UserShapes = ({
               height / 2 - size / 2
             }`;
           } else {
-            pathColor = "orange";
+            pathColor = AppColors.ds_classic_ending;
             actualPath = `M ${
               sh.startPoint + Math.abs(correctStartPoint) - size / 2
             } ${height / 2 - size / 2} H ${

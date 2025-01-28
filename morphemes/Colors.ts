@@ -3,4 +3,13 @@ export const AppColors = {
   lightBlue: "#2c6485",
   charcoal: "#394956",
   platinum: "#e8e8e8",
+  ds_bc: "#f5f5f5",
+  ds_preroot: "#add8e6",
+  ds_root: "#ffb6c1",
+  ds_suff: "#90ee90",
+  ds_ending: "#fffacd",
+  ds_classic_preroot: "#1e90ff",
+  ds_classic_root: "#ff4500",
+  ds_classic_suff: "#32cd32",
+  ds_classic_ending: "#ffd700",
 };

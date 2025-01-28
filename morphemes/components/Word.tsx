@@ -57,6 +57,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
 
   const PATH_STROKE_WIDTH = 10;
   const { width, height } = useWindowDimensions();
+  const BUTTON_CHECK_SIZE = width * 0.13;
   const imageHeight = useSharedValue(height);
 
   const [paths, setPaths] = useState<SkPath[]>([]);
@@ -227,7 +228,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
                 style="stroke"
                 strokeJoin={"round"}
                 strokeCap={"round"}
-                color={"rgba(255,255,255,0.7)"}
+                color={AppColors.ds_bc}
               >
                 <Shadow dx={2} dy={2} blur={6} color="rgba(255,255,255,0.5)" />
                 <Shadow
@@ -295,17 +296,19 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
           }}
           style={{
             position: "absolute",
-            width: 200,
-            height: 60,
+            width: BUTTON_CHECK_SIZE,
+            height: BUTTON_CHECK_SIZE / 3,
             justifyContent: "center",
             alignItems: "center",
             bottom: 30,
-            left: width / 2 - 100,
-            backgroundColor: AppColors.charcoal,
+            left: width / 2 - BUTTON_CHECK_SIZE / 2,
+            backgroundColor: AppColors.ds_classic_suff,
             borderRadius: 6,
           }}
         >
-          <Text style={{ color: AppColors.platinum, fontSize: 26 }}>
+          <Text
+            style={{ color: AppColors.blue, fontSize: BUTTON_CHECK_SIZE / 8 }}
+          >
             ПРОВЕРИТЬ
           </Text>
         </TouchableOpacity>
@@ -316,7 +319,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
           autoPlay
           loop={false}
           onAnimationFinish={() => {
-            translateX.value = withTiming(-width);
+            // translateX.value = withTiming(-width);
             setCheckedWrong(false);
             setCheckedRight(false);
             setChecked(false);
