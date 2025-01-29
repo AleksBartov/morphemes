@@ -64,19 +64,54 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
 
   const [shapes, setShapes] = useState<ShapeProps[]>([]);
 
-  
-  const shapeDetector = useCallback((
-    xes: number[],
-    yes: number[],
-    shapeWidth: number,
-    startPoint: number
-  ) => {
-    const xDiffer = Math.abs(xes[0] - xes[xes.length - 1]);
-    const yDiffer = Math.abs(yes[0] - yes[yes.length - 1]);
-    const procentage = Math.abs(Math.max(...yes) - Math.min(...yes)) / xDiffer;
+  const shapeDetector = useCallback(
+    (xes: number[], yes: number[], shapeWidth: number, startPoint: number) => {
+      const xDiffer = Math.abs(xes[0] - xes[xes.length - 1]);
+      const yDiffer = Math.abs(yes[0] - yes[yes.length - 1]);
+      const procentage =
+        Math.abs(Math.max(...yes) - Math.min(...yes)) / xDiffer;
 
-    if (xDiffer > 40 || yDiffer > 40) {
-      if (yDiffer > 40) {
+      if (xDiffer > 40 || yDiffer > 40) {
+        if (yDiffer > 40) {
+          setShapes((prev) => {
+            return [
+              ...prev,
+              {
+                startPoint: startPoint,
+                absStartPoint: xes[0],
+                shapeWidth: shapeWidth,
+                pathName: "preroot",
+              },
+            ];
+          });
+        } else {
+          if (procentage > 0.4) {
+            setShapes((prev) => {
+              return [
+                ...prev,
+                {
+                  startPoint: startPoint,
+                  absStartPoint: xes[0],
+                  shapeWidth: shapeWidth,
+                  pathName: "suff",
+                },
+              ];
+            });
+          } else {
+            setShapes((prev) => {
+              return [
+                ...prev,
+                {
+                  startPoint: startPoint,
+                  absStartPoint: xes[0],
+                  shapeWidth: shapeWidth,
+                  pathName: "root",
+                },
+              ];
+            });
+          }
+        }
+      } else {
         setShapes((prev) => {
           return [
             ...prev,
@@ -84,51 +119,14 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
               startPoint: startPoint,
               absStartPoint: xes[0],
               shapeWidth: shapeWidth,
-              pathName: "preroot",
+              pathName: "ending",
             },
           ];
         });
-      } else {
-        if (procentage > 0.4) {
-          setShapes((prev) => {
-            return [
-              ...prev,
-              {
-                startPoint: startPoint,
-                absStartPoint: xes[0],
-                shapeWidth: shapeWidth,
-                pathName: "suff",
-              },
-            ];
-          });
-        } else {
-          setShapes((prev) => {
-            return [
-              ...prev,
-              {
-                startPoint: startPoint,
-                absStartPoint: xes[0],
-                shapeWidth: shapeWidth,
-                pathName: "root",
-              },
-            ];
-          });
-        }
       }
-    } else {
-      setShapes((prev) => {
-        return [
-          ...prev,
-          {
-            startPoint: startPoint,
-            absStartPoint: xes[0],
-            shapeWidth: shapeWidth,
-            pathName: "ending",
-          },
-        ];
-      });
-    }
-  }, []);
+    },
+    []
+  );
 
   const pan = Gesture.Pan()
     .runOnJS(true)
@@ -317,6 +315,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
           loop={false}
           onAnimationFinish={() => {
             // translateX.value = withTiming(-width);
+            console.log(`hello from LottieRight`);
             fadeOut(index);
             setCheckedWrong(false);
             setCheckedRight(false);
@@ -339,6 +338,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
         <LottieView
           autoPlay
           onAnimationFinish={() => {
+            console.log(`hello from LottieWrong`);
             setCheckedWrong((e) => !e);
             // setChecked(false);
             setShapes([]);
