@@ -14,7 +14,7 @@ import {
   SkPath,
   vec,
 } from "@shopify/react-native-skia";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import {
   Text,
   TouchableOpacity,
@@ -64,13 +64,8 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
 
   const [shapes, setShapes] = useState<ShapeProps[]>([]);
 
-  const makeSnapshot = async () => {
-    // Take the snapshot of the view
-    const snapshot = await makeImageFromView(ref);
-    setImage(snapshot);
-  };
-  // console.log(shapes);
-  const shapeDetector = (
+  
+  const shapeDetector = useCallback((
     xes: number[],
     yes: number[],
     shapeWidth: number,
@@ -133,7 +128,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
         ];
       });
     }
-  };
+  }, []);
 
   const pan = Gesture.Pan()
     .runOnJS(true)
