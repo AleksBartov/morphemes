@@ -4,7 +4,8 @@ import { useState } from "react";
 import { WORDS_FOR_TEST } from "@/DATA/data";
 
 export default function Index() {
-  const [words, setWords] = useState([...WORDS_FOR_TEST, ...WORDS_FOR_TEST]);
+  const [words, setWords] = useState([...WORDS_FOR_TEST]);
+
   return (
     <View style={{ flex: 1 }}>
       <StatusBar barStyle={"dark-content"} />
