@@ -469,6 +469,97 @@ const allWords: TestedWord[] = [
     rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
     length: 5,
   },
+  {
+    word: "БЛИЖАЙШИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 3 },
+      { name: "ending", position: 7, shapeLength: 2 },
+    ],
+    length: 9,
+  },
+  {
+    word: "БЛИЖЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "БЛИЖНИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БЛИЗЕХОНЬКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 6 },
+      { name: "ending", position: 10, shapeLength: 1 },
+    ],
+    length: 11,
+  },
+  {
+    word: "БЛИЗОСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 4 },
+    ],
+    length: 8,
+  },
+  {
+    word: "БОБЁР",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "БОБРЁНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 4 },
+    ],
+    length: 8,
+  },
+  {
+    word: "БОБРИХА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БОБРОВЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+      { name: "ending", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "БОГАТЕЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "БОГАТЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 4 },
+      { name: "ending", position: 9, shapeLength: 2 },
+    ],
+    length: 11,
+  },
 ];
 
 /*
