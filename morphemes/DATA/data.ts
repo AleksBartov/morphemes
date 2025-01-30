@@ -436,6 +436,39 @@ const allWords: TestedWord[] = [
     ],
     length: 11,
   },
+  {
+    word: "БЕСПОЛЕЗНЫЙ",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 3 },
+      { name: "root", position: 3, shapeLength: 5 },
+      { name: "suff", position: 8, shapeLength: 1 },
+      { name: "ending", position: 9, shapeLength: 2 },
+    ],
+    length: 11,
+  },
+  {
+    word: "БЕССТЫДНИК",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 3 },
+      { name: "root", position: 3, shapeLength: 4 },
+      { name: "suff", position: 7, shapeLength: 3 },
+    ],
+    length: 10,
+  },
+  {
+    word: "БЕССТЫЖИЙ",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 3 },
+      { name: "root", position: 3, shapeLength: 4 },
+      { name: "ending", position: 7, shapeLength: 2 },
+    ],
+    length: 9,
+  },
+  {
+    word: "БИЛЕТ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
 ];
 
 /*
