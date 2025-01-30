@@ -9,7 +9,6 @@ import {
   Rect,
   Shadow,
   Skia,
-  SkImage,
   SkPath,
   vec,
 } from "@shopify/react-native-skia";
@@ -24,7 +23,10 @@ import {
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
   FadeOut,
+  SharedValue,
+  SlideInDown,
   useAnimatedStyle,
+  useDerivedValue,
   useSharedValue,
 } from "react-native-reanimated";
 import CloseIcon from "@/components/CloseIcon";
@@ -55,6 +57,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
 
   const [paths, setPaths] = useState<SkPath[]>([]);
   const [shapes, setShapes] = useState<ShapeProps[]>([]);
+  const [count, setCount] = useState(0);
 
   const shapeDetector = useCallback(
     (xes: number[], yes: number[], shapeWidth: number, startPoint: number) => {
@@ -250,6 +253,27 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
           </View>
         </Animated.View>
       </GestureDetector>
+      <Animated.View
+        style={{
+          position: "absolute",
+          width: BUTTON_CHECK_SIZE,
+          height: BUTTON_CHECK_SIZE / 3,
+          justifyContent: "center",
+          alignItems: "center",
+          bottom: 30,
+          left: width / 4 - BUTTON_CHECK_SIZE / 2,
+        }}
+      >
+        <Animated.Text
+          style={{
+            color:
+              count > 0 ? AppColors.ds_classic_suff : AppColors.ds_classic_root,
+            fontSize: BUTTON_CHECK_SIZE / 4,
+          }}
+        >
+          {count}
+        </Animated.Text>
+      </Animated.View>
       {checkedRight && (
         <LottieView
           autoPlay
@@ -298,12 +322,20 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
             const answer = checkAnswer([...shapes], testedWord);
 
             if (answer) {
+              setCount((e) => {
+                const newCount = e + 1;
+                return newCount;
+              });
               setShapes([]);
               setCheckedRight(true);
               Haptics.notificationAsync(
                 Haptics.NotificationFeedbackType.Success
               );
             } else {
+              setCount((e) => {
+                const newCount = e - 1;
+                return newCount;
+              });
               setShapes([]);
               setCheckedWrong(true);
               Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
@@ -316,7 +348,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
             justifyContent: "center",
             alignItems: "center",
             bottom: 30,
-            left: width / 2 - BUTTON_CHECK_SIZE / 2,
+            left: width / 2 + width / 4 - BUTTON_CHECK_SIZE / 2,
             backgroundColor: AppColors.ds_classic_suff,
             borderRadius: 6,
           }}
