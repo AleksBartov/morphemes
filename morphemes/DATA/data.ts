@@ -934,12 +934,17 @@ const allWords: TestedWord[] = [
         shapeLength: 5,
       },
       {
-        name: "ending",
+        name: "suff",
         position: 5,
         shapeLength: 1,
       },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 1,
+      },
     ],
-    length: 6,
+    length: 7,
   },
   {
     word: "БУЛАВКА",
