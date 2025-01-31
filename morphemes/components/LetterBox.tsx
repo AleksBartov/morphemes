@@ -33,6 +33,7 @@ const LetterBox = ({ letter, index, size }: LetterBoxProps) => {
         style={{
           color: AppColors.ds_bc,
           fontSize: width * 0.07,
+          fontFamily: "Nunito_800ExtraBold",
         }}
       >
         {letter}

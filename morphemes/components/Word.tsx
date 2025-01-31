@@ -269,6 +269,7 @@ const Word = React.memo(({ testedWord, index, fadeOut }: WordProps) => {
             color:
               count > 0 ? AppColors.ds_classic_suff : AppColors.ds_classic_root,
             fontSize: BUTTON_CHECK_SIZE / 4,
+            fontFamily: "Nunito_800ExtraBold",
           }}
         >
           {count}
@@ -354,7 +355,11 @@ const Word = React.memo(({ testedWord, index, fadeOut }: WordProps) => {
           }}
         >
           <Text
-            style={{ color: AppColors.blue, fontSize: BUTTON_CHECK_SIZE / 8 }}
+            style={{
+              color: AppColors.blue,
+              fontSize: BUTTON_CHECK_SIZE / 8,
+              fontFamily: "Nunito_800ExtraBold",
+            }}
           >
             ПРОВЕРИТЬ
           </Text>
