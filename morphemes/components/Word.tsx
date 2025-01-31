@@ -45,7 +45,7 @@ type WordProps = {
   fadeOut: (index: number) => void;
 };
 
-const Word = ({ testedWord, index, fadeOut }: WordProps) => {
+const Word = React.memo(({ testedWord, index, fadeOut }: WordProps) => {
   const translateX = useSharedValue(0);
 
   const [checkedWrong, setCheckedWrong] = useState(false);
@@ -362,7 +362,7 @@ const Word = ({ testedWord, index, fadeOut }: WordProps) => {
       )}
     </Animated.View>
   );
-};
+});
 
 export default Word;
 
