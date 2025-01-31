@@ -798,19 +798,367 @@ const allWords: TestedWord[] = [
     ],
     length: 9,
   },
-];
-
-/*
-{
-    word: "АВГУСТ",
+  {
+    word: "БРОД",
     rightAnswer: [
-      { name: "preroot", position: 0, shapeLength: 3 },
-      { name: "root", position: 3, shapeLength: 2 },
-      { name: "suff", position: 5, shapeLength: 1 },
-      { name: "ending", position: 6, shapeLength: 2 },
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+    ],
+    length: 4,
+  },
+  {
+    word: "БРОДЯГА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 1,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "БРОДЯЧИЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 2,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "БРУСНИКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 1,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "БУКВА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 1,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "БУКВАРЬ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 3,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "БУКВЕННЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 3,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 2,
+      },
+    ],
+    length: 9,
+  },
+  {
+    word: "БУКОВКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 1,
+      },
     ],
     length: 6,
   },
-*/
+  {
+    word: "БУЛАВКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 6,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 1,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "БУЛКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 1,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "БУЛОЧНАЯ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 2,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "БУЛОЧНИК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 3,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "БУМАГА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 1,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "БУМАЖКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 1,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "БУМАЖНИК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 3,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "БУМАЖНЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 2,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "БУСИНА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "suff",
+        position: 3,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 1,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "БУСЫ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "ending",
+        position: 3,
+        shapeLength: 1,
+      },
+    ],
+    length: 4,
+  },
+  {
+    word: "БЫК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+    ],
+    length: 3,
+  },
+  {
+    word: "БЫСТРО",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 1,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "БЫСТРЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 2,
+      },
+    ],
+    length: 7,
+  },
+];
 
 export const WORDS_FOR_TEST = shuffle(allWords);
