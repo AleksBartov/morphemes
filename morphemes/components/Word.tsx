@@ -12,7 +12,7 @@ import {
   SkPath,
   vec,
 } from "@shopify/react-native-skia";
-import { useRef, useState, useCallback, useEffect } from "react";
+import React, { useRef, useState, useCallback, useEffect } from "react";
 import {
   Text,
   TouchableOpacity,
