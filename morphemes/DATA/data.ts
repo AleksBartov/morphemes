@@ -1571,6 +1571,494 @@ const allWords: TestedWord[] = [
     ],
     length: 5,
   },
+  {
+    word: "ВЕСНУШКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 3,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 1,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "ВЕТВИСТЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 3,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 2,
+      },
+    ],
+    length: 9,
+  },
+  {
+    word: "ВЕТЕР",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "ВЕТЕРОК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 2,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "ВЕТКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 1,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "ВЕТОЧКА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 1,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "ВЕТРЕНЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 2,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "ВЕЧЕР",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "ВЕЧЕРНИЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 2,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "ВЕЧЕРОК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 2,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "ВЕЧНЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "suff",
+        position: 3,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 2,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "ВЗРОСЛЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 6,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 2,
+      },
+    ],
+    length: 8,
+  },
+  {
+    word: "ВОДА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "ending",
+        position: 3,
+        shapeLength: 1,
+      },
+    ],
+    length: 4,
+  },
+  {
+    word: "ВОДНЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "suff",
+        position: 3,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 2,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "ВОДЯНОЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "suff",
+        position: 3,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 5,
+        shapeLength: 2,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "ВОЗОК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 3,
+      },
+      {
+        name: "suff",
+        position: 3,
+        shapeLength: 2,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "ВОКЗАЛ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 6,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "ВОКЗАЛЬНЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 7,
+      },
+      {
+        name: "suff",
+        position: 7,
+        shapeLength: 1,
+      },
+      {
+        name: "ending",
+        position: 8,
+        shapeLength: 2,
+      },
+    ],
+    length: 10,
+  },
+  {
+    word: "ВОЛК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+    ],
+    length: 4,
+  },
+  {
+    word: "ВОЛНА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 1,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "ВОЛНИСТЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 3,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 2,
+      },
+    ],
+    length: 9,
+  },
+  {
+    word: "ВОЛОС",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+    ],
+    length: 5,
+  },
+  {
+    word: "ВОЛОСАТЫЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 2,
+      },
+    ],
+    length: 9,
+  },
+  {
+    word: "ВОЛОСОК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 2,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "ВОЛОСЯНОЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 5,
+      },
+      {
+        name: "suff",
+        position: 5,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 7,
+        shapeLength: 2,
+      },
+    ],
+    length: 9,
+  },
+  {
+    word: "ВОЛЧИЙ",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "ending",
+        position: 4,
+        shapeLength: 2,
+      },
+    ],
+    length: 6,
+  },
+  {
+    word: "ВОЛЧИЦА",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 2,
+      },
+      {
+        name: "ending",
+        position: 6,
+        shapeLength: 1,
+      },
+    ],
+    length: 7,
+  },
+  {
+    word: "ВОЛЧОНОК",
+    rightAnswer: [
+      {
+        name: "root",
+        position: 0,
+        shapeLength: 4,
+      },
+      {
+        name: "suff",
+        position: 4,
+        shapeLength: 4,
+      },
+    ],
+    length: 8,
+  },
 ];
 
 export const WORDS_FOR_TEST = shuffle(allWords);
