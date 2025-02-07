@@ -8694,6 +8694,151 @@ const allWords: TestedWord[] = [
     ],
     length: 7,
   },
+  {
+    word: "ПЯТНИСТЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "ПЯТН"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ИСТ"
+      { name: "ending", position: 7, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 9,
+  },
+  {
+    word: "ПЯТНО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "ПЯТН"
+      { name: "ending", position: 4, shapeLength: 1 }, // "О"
+    ],
+    length: 5,
+  },
+  {
+    word: "ПЯТНЫШКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "ПЯТН"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ЫШК"
+      { name: "ending", position: 7, shapeLength: 1 }, // "О"
+    ],
+    length: 8,
+  },
+  {
+    word: "РАБОТА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "РАБОТ"
+      { name: "ending", position: 5, shapeLength: 1 }, // "А"
+    ],
+    length: 6,
+  },
+  {
+    word: "РАДИО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "РАДИО"
+    ],
+    length: 5,
+  },
+  {
+    word: "РАДОСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РАД"
+      { name: "suff", position: 3, shapeLength: 4 }, // "ОСТЬ"
+    ],
+    length: 7,
+  },
+  {
+    word: "РАДУЖНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "РАДУЖ"
+      { name: "suff", position: 5, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 6, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 8,
+  },
+  {
+    word: "РАКОВИНА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РАК"
+      { name: "suff", position: 3, shapeLength: 4 }, // "ОВИН"
+      { name: "ending", position: 7, shapeLength: 1 }, // "А"
+    ],
+    length: 8,
+  },
+  {
+    word: "РАКУШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РАК"
+      { name: "suff", position: 3, shapeLength: 3 }, // "УШК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "РАНЕНИЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РАН"
+      { name: "suff", position: 3, shapeLength: 3 }, // "ЕНИ"
+      { name: "ending", position: 6, shapeLength: 1 }, // "Е"
+    ],
+    length: 7,
+  },
+  {
+    word: "РАНЕНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РАН"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ЕН"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "РАССКАЗ",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 3 }, // "РАС"
+      { name: "root", position: 3, shapeLength: 4 }, // "СКАЗ"
+    ],
+    length: 7,
+  },
+  {
+    word: "РАССКАЗЧИК",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 3 }, // "РАС"
+      { name: "root", position: 3, shapeLength: 4 }, // "СКАЗ"
+      { name: "suff", position: 7, shapeLength: 3 }, // "ЧИК"
+    ],
+    length: 10,
+  },
+  {
+    word: "РАСТЕНИЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "РАСТ"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ЕНИ"
+      { name: "ending", position: 7, shapeLength: 1 }, // "Е"
+    ],
+    length: 8,
+  },
+  {
+    word: "РАЧОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РАЧ"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ОК"
+    ],
+    length: 5,
+  },
+  {
+    word: "РЕБЁНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РЕБ"
+      { name: "suff", position: 3, shapeLength: 4 }, // "ЁНОК"
+    ],
+    length: 7,
+  },
+  {
+    word: "РЕБЯТА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РЕБ"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ЯТ"
+      { name: "ending", position: 5, shapeLength: 1 }, // "А"
+    ],
+    length: 6,
+  },
 ];
 
 export const WORDS_FOR_TEST = shuffle(allWords);
