@@ -278,6 +278,7 @@ const Word = React.memo(({ testedWord, index, fadeOut }: WordProps) => {
       {checkedRight && (
         <LottieView
           autoPlay
+          key='right'
           loop={false}
           onAnimationFinish={() => {
             // console.log(`from lottie right`);
@@ -299,6 +300,7 @@ const Word = React.memo(({ testedWord, index, fadeOut }: WordProps) => {
       {checkedWrong && (
         <LottieView
           autoPlay
+         key='wrong'
           onAnimationFinish={() => {
             // console.log(`from lottie wrong`);
             setCheckedWrong(false);
