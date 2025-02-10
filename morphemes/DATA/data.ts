@@ -8839,6 +8839,1483 @@ const allWords: TestedWord[] = [
     ],
     length: 6,
   },
+  {
+    word: "РЕЗИНОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "РЕЗИН"
+      { name: "suff", position: 5, shapeLength: 3 }, // "ОЧК"
+      { name: "ending", position: 8, shapeLength: 1 }, // "А"
+    ],
+    length: 9,
+  },
+  {
+    word: "РЕЧЕНЬКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РЕЧ"
+      { name: "suff", position: 3, shapeLength: 4 }, // "ЕНЬК"
+      { name: "ending", position: 7, shapeLength: 1 }, // "А"
+    ],
+    length: 8,
+  },
+  {
+    word: "РЕЧНОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РЕЧ"
+      { name: "suff", position: 3, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 4, shapeLength: 2 }, // "ОЙ"
+    ],
+    length: 6,
+  },
+  {
+    word: "РЕЧУШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РЕЧ"
+      { name: "suff", position: 3, shapeLength: 3 }, // "УШК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "РИСОВЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РИС"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ОВ"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "РИСУНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РИС"
+      { name: "suff", position: 3, shapeLength: 4 }, // "УНОК"
+    ],
+    length: 7,
+  },
+  {
+    word: "РОДИНА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РОД"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ИН"
+      { name: "ending", position: 5, shapeLength: 1 }, // "А"
+    ],
+    length: 6,
+  },
+  {
+    word: "РОДИНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РОД"
+      { name: "suff", position: 3, shapeLength: 3 }, // "ИНК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "РОДНОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РОД"
+      { name: "suff", position: 3, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 4, shapeLength: 2 }, // "ОЙ"
+    ],
+    length: 6,
+  },
+  {
+    word: "РОЖДЕНИЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "РОЖД"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ЕНИ"
+      { name: "ending", position: 7, shapeLength: 1 }, // "Е"
+    ],
+    length: 8,
+  },
+  {
+    word: "РОЖДЕСТВО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "РОЖД"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ЕСТВ"
+      { name: "ending", position: 8, shapeLength: 1 }, // "О"
+    ],
+    length: 9,
+  },
+  {
+    word: "РОСТОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "РОСТ"
+      { name: "suff", position: 4, shapeLength: 2 }, // "ОК"
+    ],
+    length: 6,
+  },
+  {
+    word: "РУЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "РУЧ"
+      { name: "suff", position: 3, shapeLength: 1 }, // "К"
+      { name: "ending", position: 4, shapeLength: 1 }, // "А"
+    ],
+    length: 5,
+  },
+  {
+    word: "РЫЦАРСКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "РЫЦАР"
+      { name: "suff", position: 5, shapeLength: 2 }, // "СК"
+      { name: "ending", position: 7, shapeLength: 2 }, // "ИЙ"
+    ],
+    length: 9,
+  },
+  {
+    word: "САДИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "САД"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ИК"
+    ],
+    length: 5,
+  },
+  {
+    word: "САДОВЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "САД"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ОВ"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "САЛАТИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "САЛАТ"
+      { name: "suff", position: 5, shapeLength: 2 }, // "ИК"
+    ],
+    length: 7,
+  },
+  {
+    word: "САНИ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "САН"
+      { name: "ending", position: 3, shapeLength: 1 }, // "И"
+    ],
+    length: 4,
+  },
+  {
+    word: "САНКИ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "САН"
+      { name: "suff", position: 3, shapeLength: 1 }, // "К"
+      { name: "ending", position: 4, shapeLength: 1 }, // "И"
+    ],
+    length: 5,
+  },
+  {
+    word: "САХАРНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "САХАР"
+      { name: "suff", position: 5, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 6, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СБЕРЕЧЬ",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 1 }, // "С"
+      { name: "root", position: 1, shapeLength: 6 }, // "БЕРЕЧЬ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СВЕЖЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СВЕЖ"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ЕНЬК"
+      { name: "ending", position: 8, shapeLength: 2 }, // "ИЙ"
+    ],
+    length: 10,
+  },
+  {
+    word: "СВЕЖЕСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СВЕЖ"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ЕСТЬ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СВЕРХУ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СВЕРХ"
+      { name: "ending", position: 5, shapeLength: 1 }, // "У"
+    ],
+    length: 6,
+  },
+  {
+    word: "СВИНИНА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СВИН"
+      { name: "suff", position: 4, shapeLength: 2 }, // "ИН"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "СВОБОДА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 }, // "СВОБОД"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "СЕВЕРНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СЕВЕР"
+      { name: "suff", position: 5, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 6, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СЕКРЕТНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 }, // "СЕКРЕТ"
+      { name: "suff", position: 6, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 7, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 9,
+  },
+  {
+    word: "СЕМЕЧКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СЕМ"
+      { name: "suff", position: 3, shapeLength: 3 }, // "ЕЧК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "О"
+    ],
+    length: 7,
+  },
+  {
+    word: "СЕМЬЯ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЕМЬ"
+      { name: "ending", position: 4, shapeLength: 1 }, // "Я"
+    ],
+    length: 5,
+  },
+  {
+    word: "СЕРДЕЧКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 }, // "СЕРДЕЧ"
+      { name: "suff", position: 6, shapeLength: 1 },
+      { name: "ending", position: 7, shapeLength: 1 }, // "О"
+    ],
+    length: 8,
+  },
+  {
+    word: "СЕРДЦЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СЕРДЦ"
+      { name: "ending", position: 5, shapeLength: 1 }, // "Е"
+    ],
+    length: 6,
+  },
+  {
+    word: "СЕСТРЁНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СЕСТР"
+      { name: "suff", position: 5, shapeLength: 3 }, // "ЁНК"
+      { name: "ending", position: 8, shapeLength: 1 }, // "А"
+    ],
+    length: 9,
+  },
+  {
+    word: "СИЛА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СИЛ"
+      { name: "ending", position: 3, shapeLength: 1 }, // "А"
+    ],
+    length: 4,
+  },
+  {
+    word: "СИЛАЧ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СИЛ"
+      { name: "suff", position: 3, shapeLength: 2 }, // "АЧ"
+    ],
+    length: 5,
+  },
+  {
+    word: "СИЛУШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СИЛ"
+      { name: "suff", position: 3, shapeLength: 3 }, // "УШК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "СИЛЬНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СИЛЬ"
+      { name: "suff", position: 4, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СИЯНИЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СИЯ"
+      { name: "suff", position: 3, shapeLength: 2 }, // "НИ"
+      { name: "ending", position: 5, shapeLength: 1 }, // "Е"
+    ],
+    length: 6,
+  },
+  {
+    word: "СИЯЮЩИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СИЯ"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ЮЩ"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ИЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СКАЗОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СКАЗ"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ОЧК"
+      { name: "ending", position: 7, shapeLength: 1 }, // "А"
+    ],
+    length: 8,
+  },
+  {
+    word: "СКВОРЕЦ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СКВОР"
+      { name: "suff", position: 5, shapeLength: 2 }, // "ЕЦ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СКОБКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СКОБ"
+      { name: "suff", position: 4, shapeLength: 1 }, // "К"
+      { name: "ending", position: 5, shapeLength: 1 }, // "А"
+    ],
+    length: 6,
+  },
+  {
+    word: "СКОРОСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СКОР"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ОСТЬ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СКОРЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СКОР"
+      { name: "ending", position: 4, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 6,
+  },
+  {
+    word: "СКУКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СКУК"
+      { name: "ending", position: 4, shapeLength: 1 }, // "А"
+    ],
+    length: 5,
+  },
+  {
+    word: "СКУЧНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СКУЧ"
+      { name: "suff", position: 4, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СЛАБАК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛАБ"
+      { name: "suff", position: 4, shapeLength: 2 }, // "АК"
+    ],
+    length: 6,
+  },
+  {
+    word: "СЛАБЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛАБ"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ЕНЬК"
+      { name: "ending", position: 8, shapeLength: 2 }, // "ИЙ"
+    ],
+    length: 10,
+  },
+  {
+    word: "СЛАДЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛАД"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ЕНЬК"
+      { name: "ending", position: 8, shapeLength: 2 }, // "ИЙ"
+    ],
+    length: 10,
+  },
+  {
+    word: "СЛАДКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛАД"
+      { name: "suff", position: 4, shapeLength: 1 }, // "К"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ИЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СЛАДОСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛАД"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ОСТЬ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СЛЕВА",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 1 }, // "С"
+      { name: "root", position: 1, shapeLength: 3 }, // "ЛЕВ"
+      { name: "ending", position: 4, shapeLength: 1 }, // "А"
+    ],
+    length: 5,
+  },
+  {
+    word: "СЛОВАРЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛОВ"
+      { name: "suff", position: 4, shapeLength: 3 }, // "АРЬ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СЛОВО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛОВ"
+      { name: "ending", position: 4, shapeLength: 1 }, // "О"
+    ],
+    length: 5,
+  },
+  {
+    word: "СЛОНЁНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛОН"
+      { name: "suff", position: 4, shapeLength: 4 }, // "ЁНОК"
+    ],
+    length: 8,
+  },
+  {
+    word: "СЛУХОВОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СЛУХ"
+      { name: "suff", position: 4, shapeLength: 2 }, // "ОВ"
+      { name: "ending", position: 6, shapeLength: 2 }, // "ОЙ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СМЕШИНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СМЕШ"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ИНК"
+      { name: "ending", position: 7, shapeLength: 1 }, // "А"
+    ],
+    length: 8,
+  },
+  {
+    word: "СМЕШНОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СМЕШ"
+      { name: "suff", position: 4, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ОЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СНЕГИРЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 7 }, // "СНЕГИРЬ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СНЕЖИНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СНЕЖ"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ИНК"
+      { name: "ending", position: 7, shapeLength: 1 }, // "А"
+    ],
+    length: 8,
+  },
+  {
+    word: "СНЕЖОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СНЕЖ"
+      { name: "suff", position: 4, shapeLength: 2 }, // "ОК"
+    ],
+    length: 6,
+  },
+  {
+    word: "СОБАЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОБАЧ"
+      { name: "suff", position: 5, shapeLength: 1 }, // "К"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "СОБАЧОНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОБАЧ"
+      { name: "suff", position: 5, shapeLength: 3 }, // "ОНК"
+      { name: "ending", position: 8, shapeLength: 1 }, // "А"
+    ],
+    length: 9,
+  },
+  {
+    word: "СОВА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СОВ"
+      { name: "ending", position: 3, shapeLength: 1 }, // "А"
+    ],
+    length: 4,
+  },
+  {
+    word: "СОВЕТНИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОВЕТ"
+      { name: "suff", position: 5, shapeLength: 3 }, // "НИК"
+    ],
+    length: 8,
+  },
+  {
+    word: "СОВУШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СОВ"
+      { name: "suff", position: 3, shapeLength: 3 }, // "УШК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "СОЛДАТ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 }, // "СОЛДАТ"
+    ],
+    length: 6,
+  },
+  {
+    word: "СОЛДАТИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 }, // "СОЛДАТ"
+      { name: "suff", position: 6, shapeLength: 2 }, // "ИК"
+    ],
+    length: 8,
+  },
+  {
+    word: "СОЛЁНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СОЛ"
+      { name: "suff", position: 3, shapeLength: 2 }, // "ЁН"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СОЛНЫШКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СОЛН"
+      { name: "suff", position: 4, shapeLength: 3 }, // "ЫШК"
+      { name: "ending", position: 7, shapeLength: 1 }, // "О"
+    ],
+    length: 8,
+  },
+  {
+    word: "СОЛОВЕЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОЛОВ"
+      { name: "ending", position: 5, shapeLength: 2 }, // "ЕЙ"
+    ],
+    length: 7,
+  },
+  {
+    word: "СОЛОВУШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОЛОВ"
+      { name: "suff", position: 5, shapeLength: 3 }, // "УШК"
+      { name: "ending", position: 8, shapeLength: 1 }, // "А"
+    ],
+    length: 9,
+  },
+  {
+    word: "СОЛОМЕННЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОЛОМ"
+      { name: "suff", position: 5, shapeLength: 3 }, // "ЕНН"
+      { name: "ending", position: 8, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 10,
+  },
+  {
+    word: "СОНЛИВЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СОН"
+      { name: "suff", position: 3, shapeLength: 3 }, // "ЛИВ"
+      { name: "ending", position: 6, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СОННЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СОН"
+      { name: "suff", position: 3, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 4, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 6,
+  },
+  {
+    word: "СОРОКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СОРОК"
+      { name: "ending", position: 5, shapeLength: 1 }, // "А"
+    ],
+    length: 6,
+  },
+  {
+    word: "СПОКОЙНО",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 1 }, // "С"
+      { name: "root", position: 1, shapeLength: 5 }, // "ПОКОЙ"
+      { name: "suff", position: 6, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 7, shapeLength: 1 }, // "О"
+    ],
+    length: 8,
+  },
+  {
+    word: "СПРАВА",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 1 }, // "С"
+      { name: "root", position: 1, shapeLength: 4 }, // "ПРАВ"
+      { name: "ending", position: 5, shapeLength: 1 }, // "А"
+    ],
+    length: 6,
+  },
+  {
+    word: "СТАРУХА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СТАР"
+      { name: "suff", position: 4, shapeLength: 2 }, // "УХ"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "СТОЛОВАЯ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 }, // "СТОЛ"
+      { name: "suff", position: 4, shapeLength: 2 }, // "ОВ"
+      { name: "ending", position: 6, shapeLength: 2 }, // "АЯ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СТРАШИЛА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СТРАШ"
+      { name: "suff", position: 5, shapeLength: 2 }, // "ИЛ"
+      { name: "ending", position: 7, shapeLength: 1 }, // "А"
+    ],
+    length: 8,
+  },
+  {
+    word: "СТРАШНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СТРАШ"
+      { name: "suff", position: 5, shapeLength: 1 }, // "Н"
+      { name: "ending", position: 6, shapeLength: 2 }, // "ЫЙ"
+    ],
+    length: 8,
+  },
+  {
+    word: "СТУЛЬЧИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 }, // "СТУЛЬ"
+      { name: "suff", position: 5, shapeLength: 3 }, // "ЧИК"
+    ],
+    length: 8,
+  },
+  {
+    word: "СУМКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СУМ"
+      { name: "suff", position: 3, shapeLength: 1 }, // "К"
+      { name: "ending", position: 4, shapeLength: 1 }, // "А"
+    ],
+    length: 5,
+  },
+  {
+    word: "СУМОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 }, // "СУМ"
+      { name: "suff", position: 3, shapeLength: 3 }, // "ОЧК"
+      { name: "ending", position: 6, shapeLength: 1 }, // "А"
+    ],
+    length: 7,
+  },
+  {
+    word: "ТУПИЦА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ТУФЕЛЬКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 },
+      { name: "suff", position: 6, shapeLength: 1 },
+      { name: "ending", position: 7, shapeLength: 1 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ТЯЖЁЛЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "УБИТЬ",
+    rightAnswer: [
+      { name: "preroot", position: 0, shapeLength: 1 },
+      { name: "root", position: 1, shapeLength: 2 },
+      { name: "suff", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "УЖИН",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 4 }],
+    length: 4,
+  },
+  {
+    word: "УЗКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 1 },
+      { name: "ending", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "УЛИТКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "УСИКИ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 2 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "УСЫ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "ending", position: 2, shapeLength: 1 },
+    ],
+    length: 3,
+  },
+  {
+    word: "УТЁНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 4 },
+    ],
+    length: 6,
+  },
+  {
+    word: "УТКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 1 },
+      { name: "ending", position: 3, shapeLength: 1 },
+    ],
+    length: 4,
+  },
+  {
+    word: "УТОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 3 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "УЧЕНИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 4 },
+    ],
+    length: 6,
+  },
+  {
+    word: "УЧЁНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 2 },
+      { name: "ending", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "УШАСТЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 3 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ФАМИЛИЯ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ФЕРМЕР",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ФРУКТОВЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 2 },
+      { name: "ending", position: 7, shapeLength: 2 },
+    ],
+    length: 9,
+  },
+  {
+    word: "ХВОСТ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "ХВОСТИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ХЛЕБУШЕК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 4 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ХОЗЯИН",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ХОККЕИСТ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 3 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ХОККЕЙ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 6 }],
+    length: 6,
+  },
+  {
+    word: "ХОЛМИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ХОЛОДНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 1 },
+      { name: "ending", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ХУДЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 4 },
+      { name: "ending", position: 7, shapeLength: 2 },
+    ],
+    length: 9,
+  },
+  {
+    word: "ХУДЫШКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "СУХОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "ending", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "СЧАСТЛИВЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 3 },
+      { name: "ending", position: 8, shapeLength: 2 },
+    ],
+    length: 10,
+  },
+  {
+    word: "ТАЗИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ТЕЛЁНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 4 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ТЕЛЕФОННЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 7 },
+      { name: "suff", position: 7, shapeLength: 1 },
+      { name: "ending", position: 8, shapeLength: 2 },
+    ],
+    length: 10,
+  },
+  {
+    word: "ТЕПЛО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ТЕРЕМОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ТЕТРАДКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 },
+      { name: "suff", position: 6, shapeLength: 1 },
+      { name: "ending", position: 7, shapeLength: 1 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ТЕТРАДЬ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 7 }],
+    length: 7,
+  },
+  {
+    word: "ТЕЧЕНИЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ТОЛСТЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 4 },
+      { name: "ending", position: 9, shapeLength: 2 },
+    ],
+    length: 11,
+  },
+  {
+    word: "ТОЛСТЯК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ТОЧНОСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 4 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ТРАМВАЙ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 7 }],
+    length: 7,
+  },
+  {
+    word: "ТРАМВАЙЧИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 7 },
+      { name: "suff", position: 7, shapeLength: 3 },
+    ],
+    length: 10,
+  },
+  {
+    word: "ТРОПИНКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 3 },
+      { name: "ending", position: 7, shapeLength: 1 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ТРОПОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 3 },
+      { name: "ending", position: 7, shapeLength: 1 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ТРУБА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ТРУБКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ТУПЕНЬКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 4 },
+      { name: "ending", position: 7, shapeLength: 2 },
+    ],
+    length: 9,
+  },
+  {
+    word: "ЦВЕТНОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЦВЕТОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЦВЕТУЩИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+      { name: "ending", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ЧАЙНИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЧАСИКИ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЧАСТИЦА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЧАСЫ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "ending", position: 3, shapeLength: 1 },
+    ],
+    length: 4,
+  },
+  {
+    word: "ЧЁРНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЧЕСТНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЧИСТОТА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЧТЕНИЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 3 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЧУВСТВО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 6 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЧУДАК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ЧУДНОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 1 },
+      { name: "ending", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЧУДОВИЩЕ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 4 },
+      { name: "ending", position: 7, shapeLength: 1 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ЧУЖОЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "ending", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ЧУЧЕЛО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ШАРФИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ШЕЙКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 1 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ШИРОКИЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ШКАФЧИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 3 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ШКОЛА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ШКОЛЬНИК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 3 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ШОССЕ",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "ШОФЁР",
+    rightAnswer: [{ name: "root", position: 0, shapeLength: 5 }],
+    length: 5,
+  },
+  {
+    word: "ШУТКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 1 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ШУТОЧКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЩЕКАСТЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ЩЕНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ЭПОХА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ЮЖНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 1 },
+      { name: "ending", position: 3, shapeLength: 2 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ЮНОСТЬ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 4 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЮНОША",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 2 },
+      { name: "ending", position: 4, shapeLength: 1 },
+    ],
+    length: 5,
+  },
+  {
+    word: "ЯБЛОКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЯБЛОЧКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 1 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЯГНЁНОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 4 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЯГОДКА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЯГОДНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 1 },
+      { name: "ending", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЯДОВИТЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "suff", position: 2, shapeLength: 4 },
+      { name: "ending", position: 6, shapeLength: 2 },
+    ],
+    length: 8,
+  },
+  {
+    word: "ЯДРЫШКО",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 3 },
+      { name: "ending", position: 6, shapeLength: 1 },
+    ],
+    length: 7,
+  },
+  {
+    word: "ЯЗЫЧОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЯМА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 2 },
+      { name: "ending", position: 2, shapeLength: 1 },
+    ],
+    length: 3,
+  },
 ];
 
 export const WORDS_FOR_TEST = shuffle(allWords);

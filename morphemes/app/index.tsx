@@ -5,7 +5,7 @@ import { WORDS_FOR_TEST } from "@/DATA/data";
 
 export default function Index() {
   const [words, setWords] = useState([...WORDS_FOR_TEST]);
-  // console.log(words.length);
+  console.log(words.length);
   return (
     <View style={{ flex: 1 }}>
       <StatusBar barStyle={"dark-content"} />
