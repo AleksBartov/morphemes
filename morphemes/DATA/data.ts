@@ -10318,4 +10318,15 @@ const allWords: TestedWord[] = [
   },
 ];
 
-export const WORDS_FOR_TEST = shuffle(allWords);
+const allWords_test: TestedWord[] = [
+  {
+    word: "АДРЕСОК",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 5 },
+      { name: "suff", position: 5, shapeLength: 2 },
+    ],
+    length: 7,
+  },
+];
+
+export const WORDS_FOR_TEST = shuffle(allWords_test);
