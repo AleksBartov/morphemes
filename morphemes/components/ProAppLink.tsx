@@ -1,22 +1,52 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Animated, { FadeIn } from "react-native-reanimated";
+import { AppColors } from "@/Colors";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { TestedWord, WORDS_FOR_TEST } from "@/DATA/data";
 
-const ProAppLink = () => {
+const shuffle = (array: TestedWord[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+type ProAppLinkProps = {
+  setWords: (array: TestedWord[]) => void;
+};
+
+const ProAppLink = ({ setWords }: ProAppLinkProps) => {
   return (
     <Animated.View
       entering={FadeIn}
       style={{
         ...StyleSheet.absoluteFill,
-        backgroundColor: "red",
+        backgroundColor: AppColors.blue,
         flex: 1,
-        flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
       }}
     >
-      <View style={styles.box}></View>
-      <View style={styles.box}></View>
+      <TouchableOpacity
+        style={styles.box}
+        onPress={() => {
+          const reset = shuffle([...WORDS_FOR_TEST]);
+          setWords(reset);
+        }}
+      >
+        <FontAwesome name="repeat" size={120} color={AppColors.ds_bc} />
+      </TouchableOpacity>
+      <Text
+        style={{
+          color: AppColors.ds_bc,
+          fontSize: 26,
+          fontFamily: "Nunito_800ExtraBold",
+        }}
+      >
+        практиковать слова еще раз
+      </Text>
     </Animated.View>
   );
 };
@@ -27,7 +57,9 @@ const styles = StyleSheet.create({
   box: {
     width: 200,
     height: 200,
-    backgroundColor: "green",
+    backgroundColor: AppColors.charcoal,
     borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

@@ -10320,12 +10320,38 @@ const allWords: TestedWord[] = [
 
 const allWords_test: TestedWord[] = [
   {
-    word: "АДРЕСОК",
+    word: "ЧАСИКИ",
     rightAnswer: [
-      { name: "root", position: 0, shapeLength: 5 },
-      { name: "suff", position: 5, shapeLength: 2 },
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "suff", position: 3, shapeLength: 2 },
+      { name: "ending", position: 5, shapeLength: 1 },
+    ],
+    length: 6,
+  },
+  {
+    word: "ЧАСТИЦА",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "suff", position: 4, shapeLength: 2 },
+      { name: "ending", position: 6, shapeLength: 1 },
     ],
     length: 7,
+  },
+  {
+    word: "ЧАСЫ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 3 },
+      { name: "ending", position: 3, shapeLength: 1 },
+    ],
+    length: 4,
+  },
+  {
+    word: "ЧЁРНЫЙ",
+    rightAnswer: [
+      { name: "root", position: 0, shapeLength: 4 },
+      { name: "ending", position: 4, shapeLength: 2 },
+    ],
+    length: 6,
   },
 ];
 

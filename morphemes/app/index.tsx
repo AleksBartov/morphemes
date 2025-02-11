@@ -11,8 +11,8 @@ export default function Index() {
   // console.log(words.length);
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar barStyle={"dark-content"} />
-      {words.length === 0 && <ProAppLink />}
+      <StatusBar barStyle={"light-content"} />
+      {words.length === 0 && <ProAppLink setWords={setWords} />}
       {words.length !== 0 && (
         <View
           style={{
