@@ -10329,4 +10329,4 @@ const allWords_test: TestedWord[] = [
   },
 ];
 
-export const WORDS_FOR_TEST = shuffle(allWords_test);
+export const WORDS_FOR_TEST = shuffle(allWords);
